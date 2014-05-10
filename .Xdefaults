@@ -1,11 +1,11 @@
 !TomorrowNight
 
-*.foreground:   #c5c8c6
-*.background:   #1d1f21
-*.cursorColor:  #aeafad
+urxvt.foreground:   #c5c8c6
+urxvt.background:   #1d1f21
+urxvt.cursorColor:  #aeafad
 
 urxvt.font: xft:monospace-12
-URxvt.preeditType: root
+urxvt.preeditType: root
 urxvt.scrollBar: false
 urxvt.termName: xterm
 urxvt.saveLines: 65535
