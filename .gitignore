@@ -12,6 +12,9 @@
 # .gmrunrc (gmrun config)
 !/.gmrunrc
 
+# .compton.conf (compton config)
+!/.compton.conf
+
 
 # .config/
 !/.config
