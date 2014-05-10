@@ -3,4 +3,19 @@
 # .gitignore
 !/.gitignore
 
+# .xprofile (fcitx config)
+!/.xprofile
+
+# .Xdefaults (urxvt config)
+!/.Xdefaults
+
+# .gmrunrc (gmrun config)
+!/.gmrunrc
+
+
+# .config/
+!/.config
+
+# mpv config
+!/.mpv
 

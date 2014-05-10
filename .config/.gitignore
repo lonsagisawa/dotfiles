@@ -1,0 +1,9 @@
+/*
+
+!/.gitignore
+
+# fontconfig
+!/fontconfig
+
+# openbox
+!/openbox

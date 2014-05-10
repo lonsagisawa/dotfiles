@@ -1,0 +1,13 @@
+exec $HOME/script/compton.sh &
+exec pulseaudio --start &
+
+exec fcitx &
+exec urxvtd -q -f -o &
+
+exec tint2 &
+
+exec nitrogen --restore &
+
+exec dropboxd &
+
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
