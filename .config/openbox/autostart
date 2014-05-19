@@ -1,13 +1,12 @@
-exec $HOME/script/compton.sh &
-exec pulseaudio --start &
-
-exec fcitx &
+# Start urxvt daemon
 exec urxvtd -q -f -o &
-
-exec tint2 &
-
+# Start composition manager
+exec compton --config $HOME/.compton.conf &
+# Start Dock
+exec plank &
+# Setting wallpapers
 exec nitrogen --restore &
-
+# Start Dropbox
 exec dropboxd &
-
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Start lxpolkitd(to mount external drive)
+exec /usr/lib/lxpolkit/lxpolkit &
