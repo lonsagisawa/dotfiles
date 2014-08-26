@@ -1,3 +1,8 @@
+# Hardware Decoding
 vo=vdpau
 hwdec=vdpau
 vf-clr=yes
+
+# Sound settings(output from ALSA, prevent clipping)
+ao=alsa
+softvol-max=100
