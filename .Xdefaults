@@ -10,6 +10,12 @@ urxvt.scrollBar: false
 urxvt.termName: xterm
 urxvt.saveLines: 65535
 
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    false
+Xft.hintstyle:  hintnone
+
 ! Black / Grey
 *.color0:       #000000
 *.color8:       #666666
