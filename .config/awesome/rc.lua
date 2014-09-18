@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- vicious
+local vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -89,7 +91,13 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+appmenu = {
+   { "Chromium", "chromium" },
+   { "TweetDeck", "tweetdeck" }
+}
+
+mymainmenu = awful.menu({ items = { { "Applications", appmenu},
+                                    { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -155,6 +163,17 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
+-- mpd widget
+mpdwidget = wibox.widget.textbox()
+vicious.register(mpdwidget, vicious.widgets.mpd,
+	function (mpdwidget, args)
+		if args["{state}"] == "Stop" then
+			return ""
+		else
+			return 'Playing: '..args["{Title}"]..' / '..args["{Artist}"]..' | '
+		end
+	end,10)
+
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
@@ -171,6 +190,7 @@ for s = 1, screen.count() do
 
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
+    
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
@@ -184,6 +204,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    if s == 1 then right_layout:add(mpdwidget) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -264,7 +285,10 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+    
+    awful.key({ }, "Print", function() awful.util.spawn_with_shell("/home/mlny/script/screenshot_full.sh") end),
+    awful.key({ "Mod1" }, "Print", function() awful.util.spawn_with_shell("/home/mlny/script/screenshot_active.sh") end)
 )
 
 clientkeys = awful.util.table.join(
