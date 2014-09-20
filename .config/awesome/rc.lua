@@ -78,27 +78,28 @@ local layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5 }, s, layouts[1])
 end
 -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
+appmenu = {
+   { "Chromium", "chromium" },
+   { "TweetDeck", "tweetdeck" },
+   { "Sonata", "sonata" },
+   { "htop", terminal .. " -e htop" }
+}
+
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "edit config", "gedit " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
 
-appmenu = {
-   { "Chromium", "chromium" },
-   { "TweetDeck", "tweetdeck" }
-}
-
 mymainmenu = awful.menu({ items = { { "Applications", appmenu},
-                                    { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "awesome", myawesomemenu, beautiful.awesome_icon }
                                   }
                         })
 
