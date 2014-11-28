@@ -1,0 +1,37 @@
+double_buffer yes
+own_window yes
+own_window_type panel
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+draw_borders no
+border_margin 1
+draw_shades no
+
+#position
+gap_x 0
+gap_y 24
+alignment top_left
+
+#behavior
+update_interval 1
+
+#color
+background yes
+default_color  808080
+own_window_color 333333
+
+#font
+use_xft yes
+xftfont Sans:pixelsize=13
+
+#to prevent window from moving
+use_spacer none
+minimum_size 1907 0
+
+# Define colors
+color1 0088cc
+color2 cccccc
+color3 ffffff
+
+TEXT
+${color2}${time %Y/%m/%d} ${if_mpd_playing} ${color1}${mpd_status} ${color3}[${mpd_elapsed}/${mpd_length}] ${mpd_smart} ${endif}${alignr}${color1}UPTIME ${color3}$uptime ${color1}CPU ${color3}${cpu cpu0}%/${cpu cpu1}%/${cpu cpu2}%/${cpu cpu3}% ${color2} [ ${execi 5 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor} ${freq_g}GHz ] ${color1}RAM ${color ffffff}$mem/ $memmax
