@@ -1,0 +1,21 @@
+# Before using this: yaourt -S alsa-plugins ladspa-bs2b
+
+defaults.pcm.rate_converter "speexrate_medium"
+
+pcm.headphone {
+	type plug
+	slave.pcm "bs2b"
+}
+
+pcm.bs2b {
+	type ladspa
+	slave.pcm "plug:dmix"
+	path "/usr/lib/ladspa/"
+	plugins[{
+		label bs2b
+		input {
+			controls [700 4.5]
+		}
+	}]
+}
+
