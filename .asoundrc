@@ -2,6 +2,39 @@
 
 defaults.pcm.rate_converter "speexrate_medium"
 
+pcm.!default {
+	type plug
+	slave.pcm "dmixer"
+}
+
+pcm.dmixer {
+	type dmix
+	
+	ipc_key_add_uid true
+	ipc_key 9871342
+	ipc_perm 0660
+	ipc_gid audio
+	
+	slave {
+		channels 2
+		pcm {
+			format S16_LE
+			rate 48000
+			nonblock true
+			
+			type hw
+			card 0
+			device 0
+			subdevice 0
+			
+			period_time 0
+			buffer_time 0
+			period_size 2048
+			buffer_size 32768
+		}
+	}
+}
+
 pcm.headphone {
 	type plug
 	slave.pcm "bs2b"
