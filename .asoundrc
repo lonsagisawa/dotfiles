@@ -1,54 +1,69 @@
-# Before using this: yaourt -S alsa-plugins ladspa-bs2b
-
 defaults.pcm.rate_converter "speexrate_medium"
+
+pcm.dmixer {
+	type asym
+	playback.pcm {
+		type dmix
+
+		ipc_key_add_uid true
+
+		ipc_key 9871342
+		ipc_perm 0660
+		ipc_gid audio
+
+		slave {
+			channels 2
+			pcm {
+				format S16_LE
+				rate 48000
+				nonblock true
+				type hw
+				card 0
+				device 0
+				subdevice 0
+			}
+			period_size 1024
+			buffer_size 16384
+		}
+	}
+	# apulse (a cut-down replacement for pulseaudio) needs dsnoop
+	# https://bbs.archlinux.org/viewtopic.php?id=187258
+	capture.pcm "dsnoop"
+}
 
 pcm.!default {
 	type plug
 	slave.pcm "dmixer"
 }
 
-pcm.dmixer {
-	type dmix
-	
-	ipc_key_add_uid true
-	ipc_key 9871342
-	ipc_perm 0660
-	ipc_gid audio
-	
-	slave {
-		channels 2
-		pcm {
-			format S16_LE
-			rate 48000
-			nonblock true
-			
-			type hw
-			card 0
-			device 0
-			subdevice 0
-			
-			period_time 0
-			buffer_time 0
-			period_size 2048
-			buffer_size 32768
-		}
-	}
-}
-
-pcm.headphone {
+pcm.!surround20 {
 	type plug
-	slave.pcm "bs2b"
+	slave.pcm "dmixer"
 }
 
 pcm.bs2b {
 	type ladspa
-	slave.pcm "plug:dmix"
-	path "/usr/lib/ladspa/"
+	path "/usr/lib/ladspa"
 	plugins[{
 		label bs2b
 		input {
-			controls [700 4.5]
+			controls [700 6]
 		}
 	}]
+	# http://bbs.archlinux.org/viewtopic.php?id=95582
+	slave.pcm "surround20"
+}
+
+pcm.headphone {
+	type rate
+	slave {
+		pcm "plug:bs2b"
+		rate 48000
+	}
+}
+
+pcm.paththru {
+	type plug
+	slave.pcm "hw:0"
 }
 
