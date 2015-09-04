@@ -8,10 +8,8 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
-local naughty = require("naughty")
+-- local naughty = require("naughty")
 local menubar = require("menubar")
--- vicious
-local vicious = require("vicious")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -40,10 +38,10 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/mlny/.config/awesome/theme/Numix.lua")
+beautiful.init("/home/mlny/.config/awesome/theme/Arc/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -58,19 +56,8 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
     awful.layout.suit.floating
 }
--- }}}
-
--- {{{ Wallpaper
--- if beautiful.wallpaper then
---    for s = 1, screen.count() do
---        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
---    end
--- end
 -- }}}
 
 -- {{{ Tags
@@ -78,28 +65,29 @@ local layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5 }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
 end
 -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-appmenu = {
-   { "Chromium", "chromium" },
-   { "TweetDeck", "tweetdeck" },
-   { "Sonata", "sonata" },
-   { "htop", terminal .. " -e htop" }
-}
+require('freedesktop.utils')
+freedesktop.utils.terminal = terminal
+freedesktop.utils.icon_theme = 'gnome'
+require('freedesktop.menu')
+
+applicationsmenu = freedesktop.menu.new()
 
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", "gedit " .. awesome.conffile },
+   { "Toggle Compositing", "compton-toggle" },
+   { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "Applications", appmenu},
-                                    { "awesome", myawesomemenu, beautiful.awesome_icon }
+mymainmenu = awful.menu({ items = { { "Applications", applicationsmenu },
+                                    { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "open terminal", terminal }
                                   }
                         })
 
@@ -164,17 +152,6 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
--- mpd widget
-mpdwidget = wibox.widget.textbox()
-vicious.register(mpdwidget, vicious.widgets.mpd,
-	function (mpdwidget, args)
-		if args["{state}"] == "Stop" then
-			return ""
-		else
-			return 'Playing: '..args["{Title}"]..' / '..args["{Artist}"]..' | '
-		end
-	end,10)
-
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
@@ -191,7 +168,6 @@ for s = 1, screen.count() do
 
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
-    
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
@@ -205,7 +181,6 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    if s == 1 then right_layout:add(mpdwidget) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -288,8 +263,9 @@ globalkeys = awful.util.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
     
-    awful.key({ }, "Print", function() awful.util.spawn_with_shell("/home/mlny/script/screenshot_full.sh") end),
-    awful.key({ "Mod1" }, "Print", function() awful.util.spawn_with_shell("/home/mlny/script/screenshot_active.sh") end)
+    awful.key({ }, "Print", function () awful.util.spawn("/home/mlny/script/screenshot_full.sh") end),
+    awful.key({ "Mod1" }, "Print", function () awful.util.spawn("/home/mlny/script/screenshot_active.sh") end)
+    
 )
 
 clientkeys = awful.util.table.join(
@@ -360,6 +336,7 @@ end
 clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
+    awful.button({ modkey }, 3, awful.mouse.client.resize),
     awful.button({ modkey, "Shift" }, 1, awful.mouse.client.resize),
     awful.button({ modkey, "Ctrl" }, 1, awful.mouse.client.resize))
 
@@ -382,7 +359,9 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
-    { rule = { class = "viewnior" },
+    { rule = { class = "ristretto" },
+      properties = { floating = true } },
+    { rule = { class = "Wine" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
