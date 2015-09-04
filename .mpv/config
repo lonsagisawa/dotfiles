@@ -4,5 +4,6 @@ hwdec=vdpau
 vf-clr=yes
 
 # Sound settings(output from ALSA, prevent clipping)
-ao=alsa
+ao=pulse
+softvol=yes
 softvol-max=100
