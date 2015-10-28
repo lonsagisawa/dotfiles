@@ -1,6 +1,6 @@
 # Hardware Decoding
-vo=vdpau
-hwdec=vdpau
+vo=opengl
+hwdec=vaapi
 vf-clr=yes
 
 # Sound settings(output from ALSA, prevent clipping)
