@@ -1,0 +1,46 @@
+conky.config = {
+	-- avoid flicker
+	double_buffer = true,
+	
+	-- own window to run simultanious 2 or more conkys
+	own_window = true,
+	own_window_transparent = false,
+	own_window_type = 'panel',
+	own_window_hints = 'undecorated, sticky, skip_taskbar, skip_pager',
+	
+	-- borders
+	draw_borders = false,
+	
+	-- shades
+	draw_shades = false,
+	
+	-- position
+	gap_x = 0,
+	gap_y = 5,
+	alignment = 'bottom_left',
+	
+	-- behavior
+	update_interval = 1,
+	
+	-- color
+	default_color = 'bac3cf',
+	own_window_colour = '2b2e37',
+	
+	-- typography
+	use_xft = true,
+	font = 'monospace:size=9',
+	override_utf8_locale = true,
+	
+	-- prevent window from moving
+	use_spacer = 'none',
+	minimum_width = 1274,
+	minimum_height = 0
+}
+
+conky.text = [[
+ ${font monospace:size=9:bold}$nodename${font} ${font monospace:size=9:bold}Kernel${font} $kernel ${font monospace:size=9:bold}Uptime${font} $uptime$alignr ${font monospace:size=9:bold}CPU${font} $cpu% ${font monospace:size=9:bold}RAM${font} $memperc% ${font monospace:size=9:bold}zram${font} $swapperc% ${font monospace:size=9:bold}WiFi${font} ${wireless_essid wlp3s0} ]]
+  
+--[[
+  # Bold font 
+  ${font monospace:size=9:bold}${font}
+  ]]
