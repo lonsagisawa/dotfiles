@@ -28,7 +28,7 @@ conky.config = {
 	
 	-- typography
 	use_xft = true,
-	font = 'monospace:size=9',
+	font = 'monospace:size=10',
 	override_utf8_locale = true,
 	
 	-- prevent window from moving
@@ -38,9 +38,9 @@ conky.config = {
 }
 
 conky.text = [[
- ${font monospace:size=9:bold}$nodename${font} ${font monospace:size=9:bold}Kernel${font} $kernel ${font monospace:size=9:bold}Uptime${font} $uptime$alignr ${font monospace:size=9:bold}CPU${font} $cpu% ${font monospace:size=9:bold}RAM${font} $memperc% ${font monospace:size=9:bold}zram${font} $swapperc% ${font monospace:size=9:bold}WiFi${font} ${wireless_essid wlp3s0} ]]
+ $nodename-$kernel ${font monospace:size=10:bold}Uptime${font} $uptime$alignr ${font monospace:size=10:bold}CPU${font} $cpu% ${font monospace:size=10:bold}RAM${font} $memperc% ${font monospace:size=10:bold}Temp${font} $acpitemp℃ ${font monospace:size=10:bold}Storage${font} ${fs_used /}/${fs_size /} ♪${texeci 1 nuvolaplayer3ctl track-info artist} - ${texeci 1 nuvolaplayer3ctl track-info title} ]]
   
 --[[
   # Bold font 
-  ${font monospace:size=9:bold}${font}
+  ${font monospace:size=10:bold}${font}
   ]]
