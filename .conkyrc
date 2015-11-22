@@ -38,7 +38,7 @@ conky.config = {
 }
 
 conky.text = [[
- $nodename-$kernel ${font monospace:size=10:bold}Uptime${font} $uptime$alignr ${font monospace:size=10:bold}CPU${font} $cpu% ${font monospace:size=10:bold}RAM${font} $memperc% ${font monospace:size=10:bold}Temp${font} $acpitemp℃ ${font monospace:size=10:bold}Storage${font} ${fs_used /}/${fs_size /} ♪${texeci 1 nuvolaplayer3ctl track-info artist} - ${texeci 1 nuvolaplayer3ctl track-info title} ]]
+ $nodename-$kernel ${font monospace:size=10:bold}Uptime${font} $uptime$alignr ${font monospace:size=10:bold}CPU${font} $cpu% ${font monospace:size=10:bold}RAM${font} $memperc% ${font monospace:size=10:bold}Temp${font} ${texeci 1 sensors | grep 'temp1' | cut -c 16-22} ${font monospace:size=10:bold}Storage${font} ${fs_used /}/${fs_size /} ]]
   
 --[[
   # Bold font 
