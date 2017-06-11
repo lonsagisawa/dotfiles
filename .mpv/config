@@ -1,9 +1,8 @@
 # Hardware Decoding
+profile=opengl
 vo=opengl
 hwdec=vaapi
-vf-clr=yes
+x11-bypass-compositor=yes
 
 # Sound settings(output from ALSA, prevent clipping)
 ao=pulse
-softvol=yes
-softvol-max=100
