@@ -1,13 +1,28 @@
 #!/bin/sh
 
-# Fcitx
-# Need to run fcitx while startup
-#export GTK_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx
-#export QT_IM_MODULE=fcitx
+# gtk3-nocsd
+export GTK_CSD=0
+export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0
+
+# Pre-Desktop daemon/settings
+exec pulseaudio &
+exec xgamma -gamma 0.8 &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec xautolock -time 5 -locker "i3lock-blur" &
+exec xset s 305 305 &
 
 # IBus
-# Need to run ibus-daemon -drx while startup
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+exec ibus-daemon -drx &
+
+# tray apps
+exec nm-applet --sm-disable &
+exec urxvtd -q -f -o &
+exec volumeicon &
+exec pamac-tray &
+
+# Post-Desktop apps
+exec compton &
+exec nitrogen --restore &

@@ -1,24 +1,21 @@
 /*
 
+# README
+!/README.md
+
 # .gitignore
 !/.gitignore
 
-# .xprofile (fcitx config)
+# .xprofile (ibus, startup)
 !/.xprofile
 
-# .Xdefaults (urxvt config)
-!/.Xdefaults
-
-# .gmrunrc (gmrun config)
-!/.gmrunrc
+# urxvt
+!/.Xresources
 
 # .compton.conf (compton config)
 !/.compton.conf
 
-
 # .config/
 !/.config
 
-# mpv config
-!/.mpv
 

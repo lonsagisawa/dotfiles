@@ -1,0 +1,39 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 1
+}
+
+order += "wireless wlp3s0"
+order += "battery all"
+order += "cpu_usage"
+order += "tztime local"
+
+cpu_usage {
+	format = " %usage"
+}
+
+wireless wlp3s0 {
+        format_up = " %quality"
+        format_down = ""
+}
+
+battery all {
+        format = "%status %percentage"
+	format_down = ""
+	status_chr = ""
+	status_bat = ""
+	status_unk = "Unknown Power"
+	status_full = ""
+}
+
+tztime local {
+        format = " %Y-%m-%d %H:%M:%S"
+}

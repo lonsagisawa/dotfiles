@@ -1,8 +1,11 @@
-# Hardware Decoding
+# OpenGL playback - default
 profile=opengl
 vo=opengl
 hwdec=vaapi
 x11-bypass-compositor=yes
+
+# xv playback - lightweight, for HEVC playback
+#profile=xv
 
 # Sound settings(output from ALSA, prevent clipping)
 ao=pulse
