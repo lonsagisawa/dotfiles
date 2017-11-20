@@ -53,17 +53,15 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Roboto:pixelsize=10;2
-font-1 = Noto Sans CJK JP:pixelsize=10;2
-font-2 = Material Icons:pixelsize=12;2
-font-3 = FontAwesome:pixelsize=12;2
+font-0 = Icons:pixelsize=14;4
+font-1 = Roboto:pixelsize=10;3
+font-2 = Noto Sans CJK JP:pixelsize=10;3
 
 modules-left = i3 xwindow
-modules-center = date
-modules-right = pkg net-wifi net-ethernet battery powermenu
+modules-center = 
+modules-right = pkg net-wifi net-ethernet batteryint batteryext date powermenu
 
-;tray-position = right
-tray-position = none
+tray-position = right
 tray-padding = 2
 
 wm-restack = i3
@@ -126,7 +124,37 @@ format-underline = #0a6cf5
 
 label = %date% %time%
 
-[module/battery]
+[module/batteryint]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+
+[module/batteryext]
 type = internal/battery
 battery = BAT1
 adapter = AC
@@ -138,22 +166,20 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
 ramp-capacity-foreground = ${colors.foreground}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
@@ -209,7 +235,7 @@ interface = wlp3s0
 interval = 3
 
 format-connected = <label-connected>
-label-connected =  %essid% %signal%%
+label-connected =  %essid% %signal%%
 
 [module/net-ethernet]
 type = internal/network
@@ -217,7 +243,7 @@ interface = enp0s25
 interval = 3
 
 format-connected = <label-connected>
-label-connected =  Connected
+label-connected =  Wired Connected
 
 [module/pkg]
 type = custom/script

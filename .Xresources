@@ -49,7 +49,7 @@
 *.color14: nord7
 *.color15: nord6
 
-urxvt.font: xft:CicaE-10
+urxvt.font: xft:Cica-12
 urxvt.preeditType: root
 urxvt.scrollBar: false
 urxvt.termName: xterm
