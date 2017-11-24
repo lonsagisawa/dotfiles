@@ -18,7 +18,7 @@ new_window pixel 1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -115,6 +115,10 @@ mode "resize" {
 
 #bindsym $mod+r mode "resize"
 
+###################
+# Colors
+###################
+
 
 
 ###################
@@ -152,8 +156,8 @@ assign [class="discord"] → $workspace9
 
 # i3-gaps specified thing, requires i3-gaps
 #for_window [class="^.*"] border pixel 1
-gaps outer 5
-smart_gaps on
+#gaps outer 5
+#smart_gaps on
 smart_borders on
 
 exec ~/.config/i3/startup.sh
