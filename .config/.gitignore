@@ -17,3 +17,6 @@
 
 # termite
 !/termite
+
+# dunst
+!/dunst
