@@ -1,321 +1,36 @@
-[colors]
-;background = ${xrdb:color0:#222}
-background = #f4f4f4
-;background = #00000000
-background-alt = #314da1
-;foreground = ${xrdb:color7:#222}
-foreground = #101010
-foreground-alt = #ffffff
-primary = #800044
-secondary = #e60053
-alert = #bd2c40
-
-black 	= ${xrdb:color0}
-red     = ${xrdb:color1}
-green   = ${xrdb:color2}
-yellow  = ${xrdb:color3}
-blue    = ${xrdb:color4}
-magenta = ${xrdb:color5}
-cyan    = ${xrdb:color6}
-white   = ${xrdb:color7}
-
-bblack 	= ${xrdb:color8}
-bred     = ${xrdb:color9}
-bgreen   = ${xrdb:color10}
-byellow  = ${xrdb:color11}
-bblue    = ${xrdb:color12}
-bmagenta = ${xrdb:color13}
-bcyan    = ${xrdb:color14}
-bwhite   = ${xrdb:color15}
+; Colors setting
+include-file = ~/.config/polybar/config.colors
 
 [bar/top]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 22
-;offset-x = 1%
-;offset-y = 1%
-radius = 0
-fixed-center = true
-
-background = ${colors.background}
-;background = #00000000
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Cica:pixelsize=12;2
+include-file = ~/.config/polybar/config.bar-common
 
 modules-left = i3 xwindow
 modules-center = 
 modules-right = date powermenu
 
 tray-position = none
-tray-padding = 2
-
 wm-restack = i3
 
 [bar/bottom]
+include-file = ~/.config/polybar/config.bar-common
 bottom = true
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 22
-;offset-x = 1%
-;offset-y = 1%
-radius = 0
-fixed-center = true
 
-background = ${colors.background}
-;background = #00000000
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Cica:pixelsize=12;2
-
-modules-left = 
+modules-left = spotify
 modules-center = 
 modules-right = pkg net-wifi net-ethernet batteryint batteryext
 
 tray-position = right
 tray-padding = 2
 
-
-[module/bspwm]
-type = internal/bspwm
-format = <label-state> <label-mode>
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-foreground = ${colors.foreground-alt}
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:50:...%
-
-[module/i3]
-type = internal/i3
-;format = <label-state> <label-mode>
-format = <label-state>
-index-sort = true
-wrapping-scroll = true
-strip-wsnumbers = true
-pin-workspaces = true
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-
-; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-foreground = ${colors.foreground-alt}
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-[module/date]
-type = internal/date
-interval = 5
-
-date =
-date-alt = " %Y-%m-%d"
-
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-underline = #0a6cf5
-
-label = %date% %time%
-
-[module/batteryint]
-type = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 99
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
-
-[module/batteryext]
-type = internal/battery
-battery = BAT1
-adapter = AC
-full-at = 99
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.red}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground}
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-[module/net-wifi]
-type = internal/network
-interface = wlp3s0
-interval = 3
-
-format-connected = <label-connected>
-label-connected =  %essid% %signal%%
-
-[module/net-ethernet]
-type = internal/network
-interface = enp0s25
-interval = 3
-
-format-connected = <label-connected>
-label-connected = 
-
-[module/pkg]
-type = custom/script
-interval = 1200
-format = <label>
-format-underline = #dc322f
-label = "%output:0:30%"
-exec = .config/polybar/pkg.sh
-exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
+; Modules setting
+include-file = ~/.config/polybar/config.modules/battery
+include-file = ~/.config/polybar/config.modules/date
+include-file = ~/.config/polybar/config.modules/i3
+include-file = ~/.config/polybar/config.modules/network
+include-file = ~/.config/polybar/config.modules/pkg
+include-file = ~/.config/polybar/config.modules/powermenu
+include-file = ~/.config/polybar/config.modules/spotify
+include-file = ~/.config/polybar/config.modules/xwindow
 
 [settings]
 screenchange-reload = true
