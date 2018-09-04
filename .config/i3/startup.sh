@@ -1,14 +1,13 @@
 #!/bin/bash
 
 # gtk3-nocsd
-#export GTK_CSD=0
-#export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0
+export GTK_CSD=0
+export LD_PRELOAD=/usr/lib/libgtk3-nocsd.so.0
 
 # Pre-Desktop daemon/settings
-exec pulseaudio &
-exec xgamma -gamma 0.85 &
-exec xfce4-power-manager &
+# exec xfce4-power-manager &
 exec light-locker &
+exec lxqt-policykit-agent &
 
 # IBus
 exec ibus-daemon -drx &
@@ -20,3 +19,5 @@ exec ibus-daemon -drx &
 # Post-Desktop apps
 exec compton &
 exec nitrogen --restore &
+exec dropbox &
+exec mpd &

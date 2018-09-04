@@ -1,34 +1,39 @@
 ; Colors setting
 include-file = ~/.config/polybar/config.colors
 
-[bar/top]
+[bar/main]
 include-file = ~/.config/polybar/config.bar-common
 
-modules-left = i3 xwindow
-modules-center = 
-modules-right = date powermenu
+modules-left = i3 spotify mpd
+modules-center = date 
+modules-right = pulseaudio pkg net-wifi net-ethernet batteryint batteryext powermenu
 
-tray-position = none
 wm-restack = i3
 
-[bar/bottom]
-include-file = ~/.config/polybar/config.bar-common
-bottom = true
-
-modules-left = spotify
-modules-center = 
-modules-right = pkg net-wifi net-ethernet batteryint batteryext
-
 tray-position = right
+tray-padding = 2
+
+[bar/sub]
+include-file = ~/.config/polybar/config.bar-common
+
+modules-left = i3 
+modules-center = date 
+modules-right =
+
+wm-restack = i3
+
+tray-position = none
 tray-padding = 2
 
 ; Modules setting
 include-file = ~/.config/polybar/config.modules/battery
 include-file = ~/.config/polybar/config.modules/date
 include-file = ~/.config/polybar/config.modules/i3
+include-file = ~/.config/polybar/config.modules/mpd
 include-file = ~/.config/polybar/config.modules/network
 include-file = ~/.config/polybar/config.modules/pkg
 include-file = ~/.config/polybar/config.modules/powermenu
+include-file = ~/.config/polybar/config.modules/pulseaudio
 include-file = ~/.config/polybar/config.modules/spotify
 include-file = ~/.config/polybar/config.modules/xwindow
 

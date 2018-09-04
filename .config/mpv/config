@@ -1,7 +1,7 @@
 # OpenGL playback - default
-profile=opengl
-vo=opengl
-hwdec=vaapi
+profile=gpu-hq
+vo=gpu
+hwdec=auto
 x11-bypass-compositor=yes
 
 # xv playback - lightweight, for HEVC playback
