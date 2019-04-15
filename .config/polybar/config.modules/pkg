@@ -1,9 +1,0 @@
-[module/pkg]
-type = custom/script
-interval = 1200
-format = <label>
-format-underline = #dc322f
-label = "%output:0:30%"
-exec = .config/polybar/pkg.sh
-exec-if = "ping -q -w 2 -c 1 8.8.8.8 > /dev/null"
-click-left = i3-sensible-terminal -e 'sudo yay -Syu'

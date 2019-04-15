@@ -5,18 +5,9 @@
 # fontconfig
 !/fontconfig
 
-# i3
-!/i3
-!/i3status
+# sway
+!/sway
+!/waybar
 
 # mpv
 !/mpv
-
-# polybar
-!/polybar
-
-# termite
-!/termite
-
-# dunst
-!/dunst

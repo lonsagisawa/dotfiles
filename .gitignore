@@ -6,15 +6,6 @@
 # .gitignore
 !/.gitignore
 
-# .xprofile (ibus, startup)
-!/.xprofile
-
-# urxvt
-!/.Xresources
-
-# .compton.conf (compton config)
-!/.compton.conf
-
 # .config/
 !/.config
 
