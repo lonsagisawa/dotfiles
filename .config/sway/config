@@ -17,7 +17,7 @@ set $menu rofi -show drun | xargs swaymsg exec
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/lon/wall/hiori.png fill
+output * bg /home/lon/Pictures/wallpaper/kiriko.png fill
 #
 # Example configuration:
 #
@@ -54,6 +54,16 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 
 input "2:7:SynPS/2_Synaptics_TouchPad" {
+    accel_profile flat
+    click_method clickfinger
+    dwt enabled
+    middle_emulation enabled
+    natural_scroll enabled
+    scroll_method two_finger
+    tap disabled
+}
+
+input "1739:0:Synaptics_TM2749-001" {
     accel_profile flat
     click_method clickfinger
     dwt enabled
@@ -199,7 +209,6 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-
 
 default_border pixel 2
 gaps inner 2
