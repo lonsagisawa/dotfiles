@@ -9,4 +9,6 @@
 # .config/
 !/.config
 
-
+# trackpadfix
+!/trackpadfix.sh
+!/trackpadfix.service
