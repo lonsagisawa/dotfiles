@@ -17,3 +17,6 @@
 
 # kitty
 !/kitty
+
+# Neovim
+!/nvim
