@@ -23,6 +23,7 @@ Need to set environmental variables, I put them on `/etc/environments`:
 GTK_IM_MODULE=ibus
 XMODIFIERS=@im=ibus
 QT_IM_MODULE=ibus
+GLFW_IM_MODULE=ibus
 ```
 
 ## Touchpad two-finger scroll issue fix

@@ -1,25 +1,28 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Noto Sans, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: Cica, Helvetica, Arial, sans-serif;
+    font-size: 15px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
-    color: #ffffff;
+    background: #1e1f29;
+    color: #e6e6e6;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
     padding: 0 5px;
     background: transparent;
+    margin-top: 3px;
+    border-bottom: 3px solid transparent;
     color: #ffffff;
 }
 
 #workspaces button.focused {
-    background: #64727D;
+    background: transparent;
+    border-color: #e6e6e6;
 }
 
 #workspaces button.urgent {
@@ -32,22 +35,22 @@ window#waybar {
 }
 
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-    padding: 0 10px;
+    padding: 0 5px;
     margin: 0 5px;
 }
 
 #clock {
-    background-color: #64727D;
+/*    background-color: #64727D; */
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+/*    background-color: #ffffff; 
+    color: #000000; */
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
+/*    color: #ffffff;
+    background-color: #26A65B; */
 }
 
 @keyframes blink {
@@ -67,17 +70,8 @@ window#waybar {
     animation-direction: alternate;
 }
 
-#cpu {
-    background: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background: #9b59b6;
-}
-
 #backlight {
-    background: #90b1b1;
+    background: transparent;
 }
 
 #network {
@@ -89,22 +83,22 @@ window#waybar {
 }
 
 #pulseaudio {
-    background: #f1c40f;
-    color: #000000;
+/*    background: #f1c40f;
+    color: #000000; */
 }
 
 #pulseaudio.muted {
-    background: #90b1b1;
-    color: #2a5c45;
+/*    background: #90b1b1;
+    color: #2a5c45; */
 }
 
 #custom-media {
-    background: #66cc99;
-    color: #2a5c45;
+/*    background: #66cc99;
+    color: #2a5c45; */
 }
 
 .custom-spotify {
-    background: #66cc99;
+/*    background: #66cc99; */
 }
 
 .custom-vlc {
@@ -120,14 +114,14 @@ window#waybar {
 }
 
 #tray {
-    background-color: #2980b9;
+/*    background-color: #2980b9; */
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: transparent;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: #e6e6e6;
+    color: #1e1f29;
 }
