@@ -33,3 +33,14 @@ Place trackpadfix.sh properly and double-check inside trackpadfix.service, then:
 $ sudo cp trackpadfix.service /etc/systemd/system/trackpadfix.service
 $ sudo systemctl enable trackpadfix
 ```
+
+## Neovim
+
+Uses dein.vim. Clone dein.vim first.
+
+```
+$ mkdir -p ~/.cache/dein/repos/github.com/Shougo
+$ git clone https://github.com/Shougo/dein.vim ~/.cache/dein/repos/github.com/Shougo/dein.vim
+```
+
+Then excute `:call dein#install()`.

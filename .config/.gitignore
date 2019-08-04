@@ -11,3 +11,6 @@
 
 # mpv
 !/mpv
+
+# Neovim
+!/nvim
