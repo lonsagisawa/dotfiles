@@ -27,7 +27,7 @@ endif
 filetype plugin indent on
 syntax enable
 
-set nowrap
+set wrap
 
 set hlsearch
 set ignorecase
