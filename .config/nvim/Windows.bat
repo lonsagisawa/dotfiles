@@ -1,6 +1,6 @@
 @echo off
 
-set SRC="."
+set SRC="C:\Users\lon\Project\dotfiles\.config\nvim"
 set DIST="%UserProfile%\AppData\Local\nvim"
 
 echo Link nvim config
@@ -9,11 +9,11 @@ echo.
 
 cd /d %~dp0
 
-copy /Y %SRC%\init.vim %DIST%\init.vim  > nul 2>&1
-copy /Y %SRC%\ginit.vim %DIST%\ginit.vim > nul 2>&1
+mklink %DIST%\init.vim %SRC%\init.vim
+mklink %DIST%\ginit.vim %SRC%\ginit.vim 
 
 echo nvim settings has been copied.
-echo Don't forget to install dein,vim.
+echo Don't forget to install dein.vim.
 echo #################################
 echo.
 pause
