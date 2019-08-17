@@ -20,3 +20,7 @@
 
 # Neovim
 !/nvim
+
+# i3
+!/i3
+!/polybar

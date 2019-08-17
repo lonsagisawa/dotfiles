@@ -5,7 +5,7 @@ After=basic.target suspend.target hibernate.target
 [Service]
 User=root
 Environment=DISPLAY=:0
-ExecStart=/home/lon/dotfiles/trackpadfix.sh
+ExecStart=/home/lon/.dotfiles/trackpadfix.sh
 
 [Install]
 WantedBy=basic.target suspend.target hibernate.target

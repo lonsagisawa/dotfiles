@@ -1,0 +1,94 @@
+[bar/default]
+modules-left = i3 bspwm
+modules-right = pulseaudio battery1 battery2 backlight date
+
+font-0 = "Cica:pixelsize=12;2"
+
+fixed-center = true
+
+height = 24
+
+padding = 1 
+module-margin = 0 
+
+dpi-x = 120
+dpi-y = 120
+
+background = #272822
+foreground = #F8F8F2
+
+offset-x = 12
+offset-y = 12
+
+enable-ipc = true
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+label-focused = %name%
+label-unfocused = %name%
+label-visible = %name%
+label-urgent = %name%
+label-mode-padding = 1
+
+label-focused-foreground = #000000
+label-focused-background = #ffffff
+label-focused-padding = 1
+label-unfocused-padding = 1
+label-urgent-padding = 1
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+
+label-focused = %name%
+label-unfocused = %name%
+label-visible = %name%
+label-urgent = %name%
+label-mode-padding = 1
+
+label-focused-foreground = #000000
+label-focused-background = #ffffff
+label-focused-padding = 1
+label-unfocused-padding = 1
+label-urgent-padding = 1
+
+
+[module/date]
+type = internal/date
+date = %Y-%m-%d%
+time = %H:%M
+format = <label>
+label = %date% %time%
+
+[module/backlight]
+type = internal/xbacklight
+format = <label>
+
+[module/battery1]
+type = internal/battery
+battery = BAT0
+adapter = AC
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+label-charging = CHG %percentage%%
+label-discharging = BAT0 %percentage%%
+
+[module/battery2]
+type = internal/battery
+battery = BAT1
+adapter = AC
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+label-charging = CHG %percentage%%
+label-discharging = BAT1 %percentage%%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-volume = Volume: %percentage%%
+label-muted = Volume: Muted
+
+; vim: ft=dosini

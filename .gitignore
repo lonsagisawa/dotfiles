@@ -12,3 +12,9 @@
 # trackpadfix
 !/trackpadfix.sh
 !/trackpadfix.service
+
+# Xorg
+!/xorg.conf.d
+
+!/.xprofile
+!/.Xresources

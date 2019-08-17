@@ -9,6 +9,12 @@
     * acpilight
 * ttf-cica
 
+## Usage
+
+```
+$ git clone https://github.com/mlny/dotfiles ~/.dotfiles
+```
+
 ## Japanese Input
 
 First, install IBus and input method. I personally prefer `ibus-skk`.
