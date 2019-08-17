@@ -8,6 +8,8 @@
     * pulseaudio
     * acpilight
 * ttf-cica
+* powerline-fonts
+* ttf-roboto-mono
 
 ## Usage
 
