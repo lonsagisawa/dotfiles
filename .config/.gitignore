@@ -24,3 +24,6 @@
 # i3
 !/i3
 !/polybar
+
+# Compton
+!/compton
