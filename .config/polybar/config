@@ -1,22 +1,29 @@
+[color]
+1 = #1a237e
+2 = #283593
+3 = #303f9f
+4 = #3949ab
+5 = #3f51b5
+
 [bar/default]
-modules-left = i3 bspwm
-modules-right = powerline pulseaudio battery1 battery2 backlight date
+modules-left = date pl_left_1 i3 pl_i3_1 pl_i3_2 title pl_left_title 
+modules-right = pl_right_3 backlight pl_right_2 pulseaudio pl_right_1 battery1 battery2 
 
 font-0 = "Roboto Mono:pixelsize=10;3"
-font-1 = "PowerlineSymbols:pixelsize=12;5"
+font-1 = "PowerlineSymbols:pixelsize=15;5"
 font-2 = "Koruri:pixelsize=12;2"
 
 fixed-center = true
 
-height = 24
+height = 27
 
-padding = 1 
+padding = 0 
 module-margin = 0 
 
 dpi-x = 120
 dpi-y = 120
 
-background = #272822
+background = #00000000
 foreground = #F8F8F2
 
 offset-x = 12
@@ -27,6 +34,8 @@ enable-ipc = true
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
+format-background = ${color.2}
+format-padding = 1 
 
 label-focused = %name%
 label-unfocused = %name%
@@ -34,44 +43,65 @@ label-visible = %name%
 label-urgent = %name%
 label-mode-padding = 1
 
-label-focused-foreground = #000000
-label-focused-background = #ffffff
+label-focused-background = #fff
+label-focused-foreground = ${color.2}
+label-unfocused-background = ${color.2}
+
 label-focused-padding = 1
 label-unfocused-padding = 1
 label-urgent-padding = 1
 
-[module/bspwm]
-type = internal/bspwm
-format = <label-state> <label-mode>
+[module/pl_i3_1]
+type = internal/xwindow
+format = <label>
+format-foreground = ${color.2}
+format-background = ${color.3} 
+label = 
+label-empty = 
 
-label-focused = %name%
-label-unfocused = %name%
-label-visible = %name%
-label-urgent = %name%
-label-mode-padding = 1
+[module/pl_i3_2]
+type = internal/xwindow
+format = <label>
+format-foreground = ${color.2}
+format-background = #00000000 
+label = 
+label-empty = 
 
-label-focused-foreground = #000000
-label-focused-background = #ffffff
-label-focused-padding = 1
-label-unfocused-padding = 1
-label-urgent-padding = 1
+[module/title]
+type = internal/xwindow
+format = <label>
+format-background = ${color.3}
+label = %title%
+label-maxlen = 50
 
+[module/pl_left_title]
+type = internal/xwindow
+format = <label>
+format-foreground = ${color.3}
+format-background = #00000000 
+label =  
+label-empty = 
 
 [module/date]
 type = internal/date
 date = %Y-%m-%d%
 time = %H:%M
 format = <label>
-label = %date% %time%
+format-background = ${color.1}
+label = %time%
 
 [module/backlight]
 type = internal/xbacklight
 format = <label>
+format-background = ${color.3}
 
 [module/battery1]
 type = internal/battery
 battery = BAT0
 adapter = AC
+format-charging-background = ${color.1}
+format-discharging-background = ${color.1}
+format-full-background = ${color.1}
 format-charging = <label-charging>
 format-discharging = <label-discharging>
 label-charging = CHG %percentage%%
@@ -81,6 +111,9 @@ label-discharging = BAT0 %percentage%%
 type = internal/battery
 battery = BAT1
 adapter = AC
+format-charging-background = ${color.1}
+format-discharging-background = ${color.1}
+format-full-background = ${color.1}
 format-charging = <label-charging>
 format-discharging = <label-discharging>
 label-charging = CHG %percentage%%
@@ -88,13 +121,45 @@ label-discharging = BAT1 %percentage%%
 
 [module/pulseaudio]
 type = internal/pulseaudio
+format-volume-background = ${color.2}
+format-muted-background = ${color.2}
 format-volume = <label-volume>
 format-muted = <label-muted>
 label-volume = Volume: %percentage%%
 label-muted = Volume: Muted
 
-[module/powerline]
+[module/pl_left_1]
+type = custom/text
+content = ""
+content-background = ${color.2}
+content-foreground = ${color.1}
+
+[module/pl_left_2]
+type = custom/text
+content = ""
+content-background = ${color.3}
+content-foreground = ${color.2}
+
+[module/pl_left_3]
+type = custom/text
+content = ""
+content-foreground = ${color.3}
+
+[module/pl_right_1]
 type = custom/text
 content = ""
+content-background = ${color.2}
+content-foreground = ${color.1}
+
+[module/pl_right_2]
+type = custom/text
+content = ""
+content-background = ${color.3}
+content-foreground = ${color.2}
+
+[module/pl_right_3]
+type = custom/text
+content = ""
+content-foreground = ${color.3}
 
 ; vim: ft=dosini
