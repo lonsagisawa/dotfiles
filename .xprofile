@@ -3,12 +3,12 @@
 export MOZ_USE_XINPUT2=1
 export EDITOR=nvim
 
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+# [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-export GLFW_IM_MODULE=ibus
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+# export GLFW_IM_MODULE=ibus
 
-exec setxkbmap jp &
+# exec setxkbmap jp &
 
