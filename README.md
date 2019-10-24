@@ -36,12 +36,7 @@ GLFW_IM_MODULE=ibus
 
 ## Touchpad two-finger scroll issue fix
 
-Place trackpadfix.sh properly and double-check inside trackpadfix.service, then:
-
-```
-$ sudo cp trackpadfix.service /etc/systemd/system/trackpadfix.service
-$ sudo systemctl enable trackpadfix
-```
+Place `modprobe.d/psmouse.conf` into `/etc/modprobe.d/psmouse.conf` .
 
 ## Neovim
 
