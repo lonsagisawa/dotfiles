@@ -25,5 +25,5 @@
 !/i3
 !/polybar
 
-# Compton
-!/compton
+# picom 
+!/picom
