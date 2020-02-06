@@ -12,6 +12,9 @@
 # trackpadfix
 !/modprobe.d
 
+# Firefox
+!/firefox
+
 # Xorg
 !/xorg.conf.d
 
