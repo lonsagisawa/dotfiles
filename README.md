@@ -2,20 +2,23 @@
 
 ## Requirement
 
-* sway
-  * waybar
+* bspwm
+  * polybar
     * python-gobject
     * pulseaudio
-    * acpilight
+    * brightnessctl
 * ttf-cica
 * powerline-fonts
 * ttf-roboto-mono
+* rofi
 
 ## Usage
 
 ```
 $ git clone https://github.com/mlny/dotfiles ~/.dotfiles
 ```
+
+Can deploy with GNU Stow other than `misc` folder.
 
 ## Japanese Input
 
@@ -36,15 +39,5 @@ GLFW_IM_MODULE=ibus
 
 ## Touchpad two-finger scroll issue fix
 
-Place `modprobe.d/psmouse.conf` into `/etc/modprobe.d/psmouse.conf` .
+Place `misc/modprobe.d/psmouse.conf` into `/etc/modprobe.d/psmouse.conf` .
 
-## Neovim
-
-Uses dein.vim. Clone dein.vim first.
-
-```
-$ mkdir -p ~/.cache/dein/repos/github.com/Shougo
-$ git clone https://github.com/Shougo/dein.vim ~/.cache/dein/repos/github.com/Shougo/dein.vim
-```
-
-Then excute `:call dein#install()`.
