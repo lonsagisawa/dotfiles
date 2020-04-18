@@ -59,6 +59,12 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Logical line move
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
 " Colorscheme
 syntax on
 colorscheme onedark
