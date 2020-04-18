@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # wm independent hotkeys
 #
@@ -20,8 +22,23 @@ super + Escape
 #
 # Display brightness
 #
+#XF86MonBrightness{Up,Down}
+#	brightnessctl s {+5%,5%-}
 XF86MonBrightness{Up,Down}
-	brightnessctl s {+5%,5%-}
+	$HOME/.config/dunst/brightnessControl.sh {up,down}
+
+
+#
+# pulseaudio
+#
+
+XF86Audio{Raise,Lower}Volume
+#	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+	$HOME/.config/dunst/volumeControl.sh {up,down}
+	
+XF86AudioMute
+#	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	$HOME/.config/dunst/volumeControl.sh mute
 
 #
 # bspwm hotkeys
@@ -52,8 +69,12 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+#super + {t,shift + t,s,f}
+#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Floating toggle
+super + shift + space
+	bspc node -t \~floating
 
 # set the node flags
 super + ctrl + {m,x,y,z}
