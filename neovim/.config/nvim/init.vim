@@ -8,7 +8,7 @@ filetype off
 "
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -23,6 +23,9 @@ Plugin 'joshdick/onedark.vim'
 
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
+
+" NERDTree
+Plugin 'preservim/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,6 +64,9 @@ syntax on
 colorscheme onedark
 set background=dark
 
-" Make Airline looks good
+" Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='onedark'
+
+" NERDTree
+let g:NERDTreeShowHidden = 1
