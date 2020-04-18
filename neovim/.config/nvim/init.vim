@@ -65,6 +65,9 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Clipboard
+set clipboard+=unnamedplus
+
 " Colorscheme
 syntax on
 colorscheme onedark
