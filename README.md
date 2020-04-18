@@ -41,3 +41,10 @@ GLFW_IM_MODULE=ibus
 
 Place `misc/modprobe.d/psmouse.conf` into `/etc/modprobe.d/psmouse.conf` .
 
+## Neovim
+
+Setup Vundle.vim first
+
+```shell
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+```
