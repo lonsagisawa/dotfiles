@@ -79,3 +79,5 @@ let g:airline_theme='onedark'
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
+map <C-n> :NERDTreeToggle<CR>
+
