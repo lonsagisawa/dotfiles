@@ -1,21 +1,21 @@
 [color]
-1 = #1a237e
-2 = #283593
-3 = #303f9f
-4 = #3949ab
-5 = #3f51b5
+bg = #282c34
+bg_dark = #21252b
+fg = #d7d3cb
+fg_dimmed = #3e4452
 
 [bar/default]
-modules-left = date pl_left_1 i3 pl_i3_1 pl_i3_2 title pl_left_title 
-modules-right = pl_right_3 backlight pl_right_2 pulseaudio pl_right_1 battery1 battery2 
+modules-left = date powerline_left_dark spacer_light bspwm spacer_light powerline_left_light title powerline_left_dark
+modules-right = powerline_right_dark nowplaying powerline_right_light pulseaudio powerline_right_dark wifi network powerline_right_light battery1 battery2  
 
-font-0 = "Roboto Mono:pixelsize=10;3"
-font-1 = "PowerlineSymbols:pixelsize=15;5"
-font-2 = "Koruri:pixelsize=12;2"
+font-0 = "PowerlineSymbols:pixelsize=16;5"
+font-1 = "Hack:pixelsize=10;3"
+font-2 = "Noto Sans CJK JP:pixelsize=11;3"
+font-3 = "Cica:pixelsize=17;4"
 
 fixed-center = true
 
-height = 27
+height = 30
 
 padding = 0 
 module-margin = 0 
@@ -23,143 +23,175 @@ module-margin = 0
 dpi-x = 120
 dpi-y = 120
 
-background = #00000000
-foreground = #F8F8F2
+background = ${color.bg}
+foreground = ${color.fg} 
 
-offset-x = 12
-offset-y = 12
+offset-x = 0
+offset-y = 0
 
 enable-ipc = true
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-format-background = ${color.2}
-format-padding = 1 
+[module/bspwm]
+type = internal/bspwm
 
-label-focused = %name%
-label-unfocused = %name%
-label-visible = %name%
-label-urgent = %name%
-label-mode-padding = 1
+format-background = ${color.bg}
 
-label-focused-background = #fff
-label-focused-foreground = ${color.2}
-label-unfocused-background = ${color.2}
-
+label-focused = %index%
+label-focused-foreground = ${color.fg}
+label-focused-background = ${color.fg_dimmed}
 label-focused-padding = 1
-label-unfocused-padding = 1
+
+label-occupied = %index%
+label-occupied-foreground = ${color.fg}
+label-occupied-background = ${color.bg}
+label-occupied-padding = 1
+
+label-urgent = %index%!
 label-urgent-padding = 1
 
-[module/pl_i3_1]
-type = internal/xwindow
-format = <label>
-format-foreground = ${color.2}
-format-background = ${color.3} 
-label = 
-label-empty = 
+label-empty = %index%
+label-empty-foreground = ${color.fg_dimmed}
+label-empty-background = ${color.bg}
+label-empty-padding = 1
 
-[module/pl_i3_2]
-type = internal/xwindow
-format = <label>
-format-foreground = ${color.2}
-format-background = #00000000 
-label = 
-label-empty = 
+; Separator in between workspaces
+; label-separator = |
 
 [module/title]
 type = internal/xwindow
 format = <label>
-format-background = ${color.3}
 label = %title%
-label-maxlen = 50
-
-[module/pl_left_title]
-type = internal/xwindow
-format = <label>
-format-foreground = ${color.3}
-format-background = #00000000 
-label =  
-label-empty = 
+label-maxlen = 20 
+format-background = ${color.bg_dark}
+format-padding = 1
 
 [module/date]
 type = internal/date
-date = %Y-%m-%d%
+date = %b %d %a
 time = %H:%M
 format = <label>
-format-background = ${color.1}
-label = %time%
+label = %date% %time%
+format-padding = 1
+format-background = ${color.bg_dark}
 
-[module/backlight]
-type = internal/xbacklight
-format = <label>
-format-background = ${color.3}
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+format-connected =  <label-connected>
+format-disconnected = 
+format-foreground-disconnected = ${color.fg_dimmed}
+label-connected = %essid% %downspeed%
+format-connected-background = ${color.bg_dark}
+format-disconnected-background = ${color.bg_dark}
+format-connected-padding = 1
+format-disconnected-padding = 1
+
+[module/network]
+type = internal/network
+interface = enp0s25
+format-connected =  <label-connected>
+format-disconnected = 
+format-foreground-disconnected = ${color.fg_dimmed}
+label-connected = %downspeed%
+format-connected-background = ${color.bg_dark}
+format-disconnected-background = ${color.bg_dark}
+format-connected-padding = 1
+format-disconnected-padding = 1
 
 [module/battery1]
 type = internal/battery
 battery = BAT0
 adapter = AC
-format-charging-background = ${color.1}
-format-discharging-background = ${color.1}
-format-full-background = ${color.1}
-format-charging = <label-charging>
-format-discharging = <label-discharging>
-label-charging = CHG %percentage%%
-label-discharging = BAT0 %percentage%%
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 1
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+label-charging = %percentage%%
+label-discharging = %percentage%%
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 
 [module/battery2]
 type = internal/battery
 battery = BAT1
 adapter = AC
-format-charging-background = ${color.1}
-format-discharging-background = ${color.1}
-format-full-background = ${color.1}
-format-charging = <label-charging>
-format-discharging = <label-discharging>
-label-charging = CHG %percentage%%
-label-discharging = BAT1 %percentage%%
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 1
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+label-charging = %percentage%%
+label-discharging = %percentage%%
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume-background = ${color.2}
-format-muted-background = ${color.2}
-format-volume = <label-volume>
-format-muted = <label-muted>
-label-volume = Volume: %percentage%%
-label-muted = Volume: Muted
+format-volume = "<ramp-volume> <label-volume>"
+format-volume-padding = 1
+format-muted = "<label-muted>"
+format-muted-padding = 1
+format-muted-foreground = ${color.fg_dimmed}
+label-volume = %percentage%%
+label-muted = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
-[module/pl_left_1]
-type = custom/text
-content = ""
-content-background = ${color.2}
-content-foreground = ${color.1}
+[module/nowplaying]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris-tail.py -f ' {artist} - {title}'
+tail = true
+format-background = ${color.bg_dark}
+format-padding = 1
 
-[module/pl_left_2]
+[module/powerline_left_dark]
 type = custom/text
-content = ""
-content-background = ${color.3}
-content-foreground = ${color.2}
+content = 
+content-foreground = ${color.bg_dark}
 
-[module/pl_left_3]
+[module/powerline_left_light]
 type = custom/text
-content = ""
-content-foreground = ${color.3}
+content = 
+content-foreground = ${color.bg}
+content-background = ${color.bg_dark}
 
-[module/pl_right_1]
+[module/powerline_right_dark]
 type = custom/text
-content = ""
-content-background = ${color.2}
-content-foreground = ${color.1}
+content =  
+content-foreground = ${color.bg_dark}
 
-[module/pl_right_2]
+[module/powerline_right_light]
 type = custom/text
-content = ""
-content-background = ${color.3}
-content-foreground = ${color.2}
+content = 
+content-foreground = ${color.bg}
+content-background = ${color.bg_dark}
 
-[module/pl_right_3]
+[module/spacer_dark]
 type = custom/text
-content = ""
-content-foreground = ${color.3}
+content-background = ${color.bg_dark}
+content = " "
+
+[module/spacer_light]
+type = custom/text
+content-background = ${color.bg}
+content = " "
 
 ; vim: ft=dosini
