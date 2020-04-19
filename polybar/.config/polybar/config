@@ -5,7 +5,7 @@ fg = #d7d3cb
 fg_dimmed = #3e4452
 
 [bar/default]
-modules-left = date powerline_left_dark spacer_light bspwm spacer_light powerline_left_light title powerline_left_dark
+modules-left = date update powerline_left_dark spacer_light bspwm spacer_light powerline_left_light title powerline_left_dark
 modules-right = powerline_right_dark nowplaying powerline_right_light pulseaudio powerline_right_dark wifi network powerline_right_light battery1 battery2  
 
 font-0 = "PowerlineSymbols:pixelsize=16;5"
@@ -161,6 +161,14 @@ exec = ~/.config/polybar/scripts/player-mpris-tail.py -f ' {artist} - {title}
 tail = true
 format-background = ${color.bg_dark}
 format-padding = 1
+
+[module/update]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates-arch.sh
+format-background = ${color.bg_dark}
+tail = false
+interval = 600
+click-left = alacritty -e sudo yay -Syu
 
 [module/powerline_left_dark]
 type = custom/text
