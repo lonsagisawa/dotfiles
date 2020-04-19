@@ -21,4 +21,8 @@ if not functions -q fisher
     fish -c fisher
 end
 
+# bobthefish
+set -g theme_nerd_fonts yes
+set -g theme_color_scheme terminal2
+
 fortune | cowsay
