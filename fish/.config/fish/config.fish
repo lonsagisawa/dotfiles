@@ -1,6 +1,7 @@
 # variables
 set -x EDITOR nvim
 set -x TERM alacritty
+set -x SHELL fish
 
 # vi keybindings
 fish_vi_key_bindings
@@ -19,3 +20,5 @@ if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
+
+fortune | cowsay
