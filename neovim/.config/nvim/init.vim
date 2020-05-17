@@ -14,12 +14,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" vim-airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" lightline
+Plugin 'itchyny/lightline.vim'
 
 " Colorscheme
-Plugin 'joshdick/onedark.vim'
+Plugin 'cocopon/iceberg.vim'
 
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
@@ -70,12 +69,13 @@ set clipboard+=unnamedplus
 
 " Colorscheme
 syntax on
-colorscheme onedark
+colorscheme iceberg 
 set background=dark
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='onedark'
+" lightline
+let g:lightline = {
+  \ 'colorscheme': 'iceberg',
+  \ }
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
