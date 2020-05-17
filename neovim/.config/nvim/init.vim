@@ -1,5 +1,3 @@
-" Be Improved
-set nocompatible
 " Required for Vundle
 filetype off
 
