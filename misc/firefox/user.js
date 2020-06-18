@@ -15,7 +15,10 @@ user_pref("browser.tabs.closeWindowWithLastTab", false);
 
 // Enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-user_pref("svg.context-properties.content.enable", true);
+user_pref("svg.context-properties.content.enabled", true);
+
+// font size
+user_pref("font.size.monospace.x-western", 16);
 
 // Typography for Windows
 user_pref("gfx.content.azure.backends", "direct2d1.1,cairo");
