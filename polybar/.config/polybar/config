@@ -1,21 +1,19 @@
 [color]
-bg = #282c34
-bg_dark = #21252b
+bg = #e6282c34
 fg = #d7d3cb
 fg_dimmed = #3e4452
 
 [bar/default]
-modules-left = date update powerline_left_dark spacer_light bspwm spacer_light powerline_left_light title powerline_left_dark
-modules-right = powerline_right_dark nowplaying powerline_right_light pulseaudio powerline_right_dark wifi network powerline_right_light battery1 battery2  
+modules-left = date update spacer_light bspwm spacer_light title
+modules-right = nowplaying pulseaudio wifi network battery1 battery2  
 
-font-0 = "PowerlineSymbols:pixelsize=16;5"
-font-1 = "Hack:pixelsize=10;3"
-font-2 = "Noto Sans CJK JP:pixelsize=11;3"
-font-3 = "Cica:pixelsize=17;4"
+font-0 = "Iosevka Aile:pixelsize=10;3"
+font-1 = "Sarasa UI J:pixelsize=10;3"
+font-2 = "Material Design Icons Desktop:pixelsize=14;4"
 
 fixed-center = true
 
-height = 30
+height = 32
 
 padding = 0 
 module-margin = 0 
@@ -33,8 +31,6 @@ enable-ipc = true
 
 [module/bspwm]
 type = internal/bspwm
-
-format-background = ${color.bg}
 
 label-focused = %index%
 label-focused-foreground = ${color.fg}
@@ -62,7 +58,6 @@ type = internal/xwindow
 format = <label>
 label = %title%
 label-maxlen = 20 
-format-background = ${color.bg_dark}
 format-padding = 1
 
 [module/date]
@@ -72,30 +67,32 @@ time = %H:%M
 format = <label>
 label = %date% %time%
 format-padding = 1
-format-background = ${color.bg_dark}
 
 [module/wifi]
 type = internal/network
 interface = wlp3s0
-format-connected =  <label-connected>
-format-disconnected = 
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = 󰤮
 format-foreground-disconnected = ${color.fg_dimmed}
 label-connected = %essid% %downspeed%
-format-connected-background = ${color.bg_dark}
 format-disconnected-foreground = ${color.fg_dimmed}
-format-disconnected-background = ${color.bg_dark}
 format-connected-padding = 1
 format-disconnected-padding = 1
+ramp-signal-0 = 󰤯
+ramp-signal-1 = 󰤟
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
+click-left = networkmanager_dmenu
+
 
 [module/network]
 type = internal/network
 interface = enp0s25
-format-connected =  <label-connected>
+format-connected = 󰌗 <label-connected>
 format-disconnected = 
 format-foreground-disconnected = ${color.fg_dimmed}
 label-connected = %downspeed%
-format-connected-background = ${color.bg_dark}
-format-disconnected-background = ${color.bg_dark}
 format-connected-padding = 1
 format-disconnected-padding = 1
 
@@ -107,19 +104,31 @@ format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 󰂎
+ramp-capacity-1 = 󰁺
+ramp-capacity-2 = 󰁻
+ramp-capacity-3 = 󰁼
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰁿
+ramp-capacity-8 = 󰂀
+ramp-capacity-9 = 󰂁
+ramp-capacity-10 = 󰂂
+ramp-capacity-11 = 󰁹
 label-charging = %percentage%%
 label-discharging = %percentage%%
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
+animation-charging-0 = 󰢜
+animation-charging-1 = 󰂆
+animation-charging-2 = 󰂇
+animation-charging-3 = 󰂈
+animation-charging-4 = 󰢝
+animation-charging-5 = 󰂉
+animation-charging-6 = 󰢞
+animation-charging-7 = 󰂊
+animation-charging-8 = 󰂋
+animation-charging-9 = 󰂅
+animation-charging-framerate = 250
 
 [module/battery2]
 type = internal/battery
@@ -129,19 +138,31 @@ format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 󰂎
+ramp-capacity-1 = 󰁺
+ramp-capacity-2 = 󰁻
+ramp-capacity-3 = 󰁼
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰁿
+ramp-capacity-8 = 󰂀
+ramp-capacity-9 = 󰂁
+ramp-capacity-10 = 󰂂
+ramp-capacity-11 = 󰁹
 label-charging = %percentage%%
 label-discharging = %percentage%%
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
+animation-charging-0 = 󰢜
+animation-charging-1 = 󰂆
+animation-charging-2 = 󰂇
+animation-charging-3 = 󰂈
+animation-charging-4 = 󰢝
+animation-charging-5 = 󰂉
+animation-charging-6 = 󰢞
+animation-charging-7 = 󰂊
+animation-charging-8 = 󰂋
+animation-charging-9 = 󰂅
+animation-charging-framerate = 250
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -160,47 +181,21 @@ ramp-volume-2 = 
 type = custom/script
 exec = ~/.config/polybar/scripts/player-mpris-tail.py -f ' {artist} - {title}'
 tail = true
-format-background = ${color.bg_dark}
 format-padding = 1
 
 [module/update]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch.sh
-format-background = ${color.bg_dark}
 tail = false
 interval = 600
 click-left = alacritty -e sudo yay -Syu
 
-[module/powerline_left_dark]
-type = custom/text
-content = 
-content-foreground = ${color.bg_dark}
-
-[module/powerline_left_light]
-type = custom/text
-content = 
-content-foreground = ${color.bg}
-content-background = ${color.bg_dark}
-
-[module/powerline_right_dark]
-type = custom/text
-content =  
-content-foreground = ${color.bg_dark}
-
-[module/powerline_right_light]
-type = custom/text
-content = 
-content-foreground = ${color.bg}
-content-background = ${color.bg_dark}
-
 [module/spacer_dark]
 type = custom/text
-content-background = ${color.bg_dark}
 content = " "
 
 [module/spacer_light]
 type = custom/text
-content-background = ${color.bg}
 content = " "
 
 ; vim: ft=dosini
