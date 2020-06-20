@@ -12,6 +12,7 @@ picom --experimental-backend &
 $HOME/.fehbg &
 xsetroot -cursor_name left_ptr &
 ibus-daemon -drx &
+xss-lock --transfer-sleep-lock -- i3lock &
 
 #############
 # Preferences

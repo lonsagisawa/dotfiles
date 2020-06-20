@@ -18,9 +18,15 @@ super + Tab
 super + shift + m
 	UDISKIE_DMENU_LAUNCHER="rofi" udiskie-dmenu -matching regex -dmenu -i -no-custom -multi-select	 
 
+super + shift + n
+	networkmanager_dmenu
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+super + l
+	i3lock
 
 #
 # Display brightness
@@ -29,7 +35,6 @@ super + Escape
 #	brightnessctl s {+5%,5%-}
 XF86MonBrightness{Up,Down}
 	$HOME/.config/dunst/brightnessControl.sh {up,down}
-
 
 #
 # pulseaudio
