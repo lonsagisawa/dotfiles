@@ -7,7 +7,8 @@ fi
 updates=$(("$updates_arch"))
 
 if [ "$updates" -gt 0 ]; then
-	echo "  $updates Update(s) "
+	# echo "󰣇 $updates Update(s)"
+	echo "󰣇 Update Available"
 else
     echo ""
 fi
