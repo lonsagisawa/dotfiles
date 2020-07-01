@@ -7,10 +7,11 @@
     * python-gobject
     * pulseaudio
     * brightnessctl
-* ttf-cica
-* powerline-fonts
-* ttf-roboto-mono
+* betterlockscreen
+* ttf-sarasa-gothic
+* ttf-iosevka
 * rofi
+* materialdesign-font( https://github.com/Templarian/MaterialDesign-Font )
 
 ## Usage
 
