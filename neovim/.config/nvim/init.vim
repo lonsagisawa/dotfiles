@@ -16,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 
 " Colorscheme
-Plugin 'cocopon/iceberg.vim'
+Plugin 'dracula/vim', { 'as': 'dracula' }
 
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
@@ -70,12 +70,12 @@ set clipboard+=unnamedplus
 
 " Colorscheme
 syntax on
-colorscheme iceberg 
+colorscheme dracula
 set background=dark
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'iceberg',
+  \ 'colorscheme': 'dracula',
   \ }
 
 " NERDTree
