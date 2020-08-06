@@ -34,7 +34,7 @@ super + l
 #XF86MonBrightness{Up,Down}
 #	brightnessctl s {+5%,5%-}
 XF86MonBrightness{Up,Down}
-	$HOME/.config/dunst/brightnessControl.sh {up,down}
+	$HOME/bin/brightnessControl {up,down}
 
 #
 # pulseaudio
@@ -42,11 +42,11 @@ XF86MonBrightness{Up,Down}
 
 XF86Audio{Raise,Lower}Volume
 #	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
-	$HOME/.config/dunst/volumeControl.sh {up,down}
+	$HOME/bin/volumeControl {up,down}
 	
 XF86AudioMute
 #	pactl set-sink-mute @DEFAULT_SINK@ toggle
-	$HOME/.config/dunst/volumeControl.sh mute
+	$HOME/bin/volumeControl mute
 
 #
 # bspwm hotkeys
