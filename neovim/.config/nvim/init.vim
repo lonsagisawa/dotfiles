@@ -82,3 +82,5 @@ let g:lightline = {
 let g:NERDTreeShowHidden = 1
 map <C-n> :NERDTreeToggle<CR>
 
+" suda.vim
+let g:suda_smart_edit = 1
