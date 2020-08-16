@@ -1,16 +1,16 @@
 configuration {
-/*	modi: "window,run,ssh";*/
+    modi: "window,run,ssh,drun";
 /*	width: 50;*/
 	lines: 10;
 	columns: 1;
-	font: "Sarasa UI J 18";
+	font: "Sarasa Term J 14";
 /*	bw: 1;*/
-/*	location: 0;*/
+	location: 2;
 /*	padding: 5;*/
-/*	yoffset: -100;*/
+	yoffset: 32;
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-	show-icons: true;
+	show-icons: false;
 	terminal: "alacritty";
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -53,7 +53,7 @@ configuration {
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
-	theme: "onedark";
+	theme: "dracula";
 /*	color-normal: ;*/
 /*	color-urgent: ;*/
 /*	color-active: ;*/

@@ -1,0 +1,55 @@
+/* almost stolen Slate theme from official themes
+ * https://github.com/davatorium/rofi-themes/blob/master/User%20Themes/slate.rasi */
+
+configuration {
+  drun-display-format: "{icon} {name}";
+  display-drun: "";
+  display-window: "";
+}
+
+* {
+  background-color: #282a36;
+  border-color: #44475a;
+  text-color: #f8f8f2;
+  spacing: 0;
+  width: 1680px;
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
+}
+
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
+}
+
+textbox {
+  background-color: #2e343f;
+  border: 0 0 1px 0;
+  border-color: #282C33;
+  padding: 8px 16px;
+}
+
+entry {
+  padding: 16px;
+}
+
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 6px 18px;
+}
+
+element selected {
+  background-color: #bd93f9;
+  color: #282a36;
+}
+
+/* vim:ft=css
