@@ -12,7 +12,7 @@ configuration {
   border-color: #44475a;
   text-color: #f8f8f2;
   spacing: 0;
-  width: 1680px;
+  width: 1910px;
 }
 
 inputbar {
