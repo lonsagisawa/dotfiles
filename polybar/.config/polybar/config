@@ -1,19 +1,27 @@
 [color]
-bg = #282c34
+bg = #282a36
 fg = #d7d3cb
-fg_dimmed = #3e4452
+fg_dimmed = #44475a
+red = #ff5555
+yellow = #f1fa8c
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+cyan = #8be9fd
 
 [bar/default]
 modules-left = bspwm update
-modules-right = nowplaying pulseaudio wifi network battery1 battery2 date 
+modules-right = pulseaudio wifi network battery1 battery2 date 
 
-#font-0 = "Iosevka Aile:pixelsize=10;3"
-font-0 = "Sarasa UI J:pixelsize=12;4"
-font-1 = "Material Design Icons Desktop:pixelsize=14;4"
+font-0 = "Iosevka Aile:pixelsize=11;3"
+font-1 = "Sarasa Term J:pixelsize=11;4"
+font-2 = "Font Awesome 5 Brands Regular:pixelsize=11;2"
+font-3 = "Font Awesome 5 Free Regular:pixelsize=11;2"
+font-4 = "Font Awesome 5 Free Solid:pixelsize=11;2"
 
 fixed-center = true
 
-height = 34
+height = 28
 
 padding = 2
 module-margin = 0
@@ -73,24 +81,20 @@ type = internal/network
 interface = wlp3s0
 # format-connected = <ramp-signal> <label-connected>
 format-connected = <ramp-signal>
-format-disconnected = 󰤮
+format-disconnected = 
 format-foreground-disconnected = ${color.fg_dimmed}
 label-connected = %essid% %downspeed%
 format-disconnected-foreground = ${color.fg_dimmed}
 format-connected-padding = 1
 format-disconnected-padding = 1
-ramp-signal-0 = 󰤯
-ramp-signal-1 = 󰤟
-ramp-signal-2 = 󰤢
-ramp-signal-3 = 󰤥
-ramp-signal-4 = 󰤨
+ramp-signal-0 = 
 click-left = networkmanager_dmenu
 
 [module/network]
 type = internal/network
 interface = enp0s25
 # format-connected = 󰌗 <label-connected>
-format-connected = 󰌗
+format-connected = 
 format-disconnected = 
 format-foreground-disconnected = ${color.fg_dimmed}
 label-connected = %downspeed%
@@ -105,22 +109,16 @@ format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-ramp-capacity-0 = 󰂎
-ramp-capacity-1 = 󰁺
-ramp-capacity-2 = 󰁻
-ramp-capacity-3 = 󰁼
-ramp-capacity-4 = 󰁽
-ramp-capacity-5 = 󰁾
-ramp-capacity-6 = 󰁿
-ramp-capacity-7 = 󰁿
-ramp-capacity-8 = 󰂀
-ramp-capacity-9 = 󰂁
-ramp-capacity-10 = 󰂂
-ramp-capacity-11 = 󰁹
+format-full = <ramp-capacity> <label-full>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 label-charging = %percentage%%
 label-discharging = %percentage%%
-animation-charging-0 = 󰂄
-animation-charging-framerate = 250
+label-full = %percentage%%
+animation-charging-0 = 
 
 [module/battery2]
 type = internal/battery
@@ -130,22 +128,16 @@ format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = 1
-ramp-capacity-0 = 󰂎
-ramp-capacity-1 = 󰁺
-ramp-capacity-2 = 󰁻
-ramp-capacity-3 = 󰁼
-ramp-capacity-4 = 󰁽
-ramp-capacity-5 = 󰁾
-ramp-capacity-6 = 󰁿
-ramp-capacity-7 = 󰁿
-ramp-capacity-8 = 󰂀
-ramp-capacity-9 = 󰂁
-ramp-capacity-10 = 󰂂
-ramp-capacity-11 = 󰁹
+format-full = <ramp-capacity> <label-full>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 label-charging = %percentage%%
 label-discharging = %percentage%%
-animation-charging-0 = 󰂄
-animation-charging-framerate = 250
+label-full = %percentage%%
+animation-charging-0 = 
 
 [module/pulseaudio]
 type = internal/pulseaudio
