@@ -2,6 +2,7 @@
 
 export MOZ_USE_XINPUT2=1
 export EDITOR=nvim
+export W3MIMGDISPLAY_PATH=/usr/lib/w3m/w3mimgdisplay
 
 # [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
