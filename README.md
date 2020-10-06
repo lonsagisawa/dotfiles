@@ -1,17 +1,15 @@
 # dotfiles
 
+WIP dwm dotfiles
+
 ## Requirement
 
-* bspwm
-  * polybar
-    * python-gobject
-    * pulseaudio
-    * brightnessctl
+* dwm with autostart patch
 * betterlockscreen
 * ttf-sarasa-gothic
 * ttf-iosevka
 * rofi
-* materialdesign-font( https://github.com/Templarian/MaterialDesign-Font )
+* Font Awesome 5
 
 ## Usage
 
