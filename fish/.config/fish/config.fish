@@ -3,6 +3,9 @@ set -x EDITOR nvim
 set -x TERM alacritty
 set -x SHELL fish
 
+# PATH
+set -x PATH $HOME/.cargo/bin $PATH
+
 # aliases
 alias vim="nvim"
 alias g="git"
