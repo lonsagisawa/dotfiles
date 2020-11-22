@@ -21,3 +21,8 @@ if not functions -q fisher
     fish -c fisher
 end
 
+# suppress greeting
+set fish_greeting
+
+# starship
+starship init fish | source
