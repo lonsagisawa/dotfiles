@@ -16,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 
 " Colorscheme
-Plugin 'morhetz/gruvbox'
+Plugin 'dracula/vim', { 'name': 'dracula' }
 
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
@@ -26,6 +26,9 @@ Plugin 'preservim/nerdtree'
 
 " suda.vim
 Plugin 'lambdalisue/suda.vim'
+
+" devicons
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,12 +73,12 @@ set clipboard+=unnamedplus
 
 " Colorscheme
 syntax on
-colorscheme gruvbox 
+colorscheme dracula 
 set background=dark
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'gruvbox',
+  \ 'colorscheme': 'dracula',
   \ }
 
 " NERDTree
