@@ -10,4 +10,7 @@ mkfifo /tmp/brightnessbar; tail -f /tmp/brightnessbar | xob -m $(brightnessctl m
 # IBus
 ibus-daemon -drx &
 
+# light-locker
+light-locker --lock-on-suspend --lock-on-lid &
+
 dwmblocks
