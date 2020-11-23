@@ -1,15 +1,24 @@
+![Screenshot](https://i.imgur.com/MGReAwe.png)
+![Dirtier screenshot](https://i.imgur.com/cCFAN5T.png)
+
 # dotfiles
 
 WIP dwm dotfiles
 
 ## Requirement
 
-* dwm with autostart patch
-* betterlockscreen
+* [dwm with autostart patch](https://github.com/lonsagisawa/arch-pkgs)
 * ttf-sarasa-gothic
-* ttf-iosevka
+* inter-font
+* Neovim
+* xob
 * rofi
-* Font Awesome 5
+* Nerd Fonts Symbols
+
+```
+$ sudo pacman -S ttf-sarasa-gothic inter-font neovim rofi ttf-nerd-fonts-symbols
+$ yay -S xob
+```
 
 ## Usage
 
@@ -17,7 +26,7 @@ WIP dwm dotfiles
 $ git clone https://github.com/lonsagisawa/dotfiles
 ```
 
-Can deploy with GNU Stow other than `misc` folder.
+Can deploy with GNU Stow **other than `misc` folder**.
 
 ```
 $ stow bspwm
@@ -49,11 +58,11 @@ Then install plugins in nvim `:PluginInstall`
 
 ### Display Manager
 
-Didn't mentioned in any dotfiles, I recommend `ly` for display manager.
+Didn't mentioned in any dotfiles, I use `lightdm` for display manager and `light-locker` for screen locker.
 
 ```
-$ yay -S ly
-$ sudo systemctl enable ly
+$ sudo pacman -S lightdm lightdm-gtk-greeter light-locker
+$ sudo systemctl enable lightdm
 ```
 
 ### fstrim
