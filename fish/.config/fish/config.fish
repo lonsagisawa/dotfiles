@@ -1,6 +1,5 @@
 # variables
 set -x EDITOR nvim
-set -x TERM alacritty
 set -x SHELL fish
 
 # PATH
