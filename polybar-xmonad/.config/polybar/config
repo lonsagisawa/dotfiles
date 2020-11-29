@@ -1,0 +1,151 @@
+[color]
+bg = #282a36
+fg = #d7d3cb
+fg_dimmed = #44475a
+red = #ff5555
+yellow = #f1fa8c
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+cyan = #8be9fd
+
+[bar/default]
+modules-left = workspaces update
+modules-right = pulseaudio wifi network battery1 battery2 date 
+
+font-0 = "Inter:pixelsize=10;2"
+font-1 = "Noto Sans CJK JP:pixelsize=10;2"
+font-2 = "Symbols Nerd Font:pixelsize=14;3"
+
+fixed-center = true
+
+height = 28
+
+padding = 2
+module-margin = 0
+
+dpi-x = 120
+dpi-y = 120
+
+background = ${color.bg}
+foreground = ${color.fg} 
+
+offset-x = 0
+offset-y = 0
+
+enable-ipc = true
+
+[module/workspaces]
+type = internal/xworkspaces
+label-active-foreground = ${color.purple}
+label-active-background = ${color.bg}
+
+[module/title]
+type = custom/script
+exec = tail -F /tmp/.xmonad-title-log
+exec-if = [ -p /tmp/.xmonad-title-log ]
+tail = true
+
+[module/date]
+type = internal/date
+date = %b %d %a
+time = %H:%M
+format = <label>
+label = %date% %time%
+format-padding = 1
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+# format-connected = <ramp-signal> <label-connected>
+format-connected = <ramp-signal>
+format-disconnected = 
+format-foreground-disconnected = ${color.fg_dimmed}
+label-connected = %essid% %downspeed%
+format-disconnected-foreground = ${color.fg_dimmed}
+format-connected-padding = 1
+format-disconnected-padding = 1
+ramp-signal-0 = 
+click-left = networkmanager_dmenu
+
+[module/network]
+type = internal/network
+interface = enp0s25
+# format-connected = 󰌗 <label-connected>
+format-connected = 
+format-disconnected = 
+format-foreground-disconnected = ${color.fg_dimmed}
+label-connected = %downspeed%
+format-connected-padding = 1
+format-disconnected-padding = 1
+
+[module/battery1]
+type = internal/battery
+battery = BAT0
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 1
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+format-full = <ramp-capacity> <label-full>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+animation-charging-0 = 
+
+[module/battery2]
+type = internal/battery
+battery = BAT1
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 1
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 1
+format-full = <ramp-capacity> <label-full>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+animation-charging-0 = 
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = "<ramp-volume> <label-volume>"
+format-volume-padding = 1
+format-muted = "<label-muted>"
+format-muted-padding = 1
+format-muted-foreground = ${color.fg_dimmed}
+label-volume = %percentage%%
+label-muted = 󰖁 
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
+
+[module/nowplaying]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '󰝚 {artist} - {title}'
+tail = true
+format-padding = 1
+
+[module/update]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates-arch.sh
+tail = false
+interval = 600
+click-left = alacritty -e yay -Syu
+format-padding = 1
+
+[module/spacer]
+type = custom/text
+content = " "
+
+; vim: ft=dosini
