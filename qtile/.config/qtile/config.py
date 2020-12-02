@@ -102,9 +102,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font = 'Inter',
+    font = 'Cica',
     foreground = 'f8f8f2',
-    fontsize = 16,
+    fontsize = 18,
     padding = 6,
 )
 extension_defaults = widget_defaults.copy()
@@ -116,30 +116,45 @@ screens = [
                 widget.GroupBox(
                     this_current_screen_border = 'bd93f9',
                     active = 'f8f8f2',
-                    inactive = '6272a4',
+                    inactive = '44475a',
                     highlight_method = 'text',
                     ),
                 widget.CurrentLayoutIcon(
                     scale = 0.6,
                     ),
                 widget.Prompt(),
-                widget.WindowName(),
+                widget.WindowName(
+                    ),
                 widget.CheckUpdates(
+                    display_format = ' {updates}',
                     distro = 'Arch',
                     ),
+                widget.Mpris2(
+                    name='spotify',
+                    objname = 'org.mpris.MediaPlayer2.spotify',
+                    display_metadata = ['xesam:title', 'xesam:artist'],
+                    ),
                 widget.Wlan(
-                    format = '{essid}',
+                    format = ' {essid}',
                     interface = 'wlp3s0',
                     ),
                 widget.Net(
-                    format = '{down} ↓↑ {up}',
+                    format = '{down} {up}',
                     ),
                 widget.Battery(
                     format = '{char} {percent:2.0%}',
+                    charge_char = '󿖃',
+                    discharge_char = '󿕸',
+                    full_char = '󿕸',
+                    unknown_char = '󿕸',
                     battery = 'BAT0',
                     ),
                 widget.Battery(
                     format = '{char} {percent:2.0%}',
+                    charge_char = '󿖃',
+                    discharge_char = '󿕸',
+                    full_char = '󿕸',
+                    unknown_char = '󿕸',
                     battery = 'BAT1',
                     ),
                 widget.Chord(
@@ -148,11 +163,8 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray(
-                    icon_size = 24,
-                    ),
                 widget.Clock(
-                    format = '%H:%M',
+                    format = '%H:%M ',
                     ),
             ],
             28,
