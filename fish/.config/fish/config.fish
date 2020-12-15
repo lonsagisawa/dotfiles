@@ -5,6 +5,7 @@ set -x SHELL fish
 # PATH
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH $HOME/.neovim/bin $PATH
 
 # aliases
 # alias vim="nvim"
@@ -24,5 +25,7 @@ end
 
 # suppress greeting
 set fish_greeting
+
+load_nvm
 
 starship init fish | source
