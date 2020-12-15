@@ -1,3 +1,7 @@
+# I'm going to make switch
+
+Recently bought MacBook Air(2020, M1) and it's awesome! Made some modification to dots and decided to maintain it as separate branch so Mac-specific dots going here: https://github.com/lonsagisawa/dotfiles/tree/macos
+
 ![Screenshot](https://i.imgur.com/MGReAwe.png)
 ![Dirtier screenshot](https://i.imgur.com/cCFAN5T.png)
 
