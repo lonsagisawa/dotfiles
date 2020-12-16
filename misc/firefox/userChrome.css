@@ -61,11 +61,17 @@
 	.titlebar-spacer {
 		display: none;
 	}
-	/* ツールバーの中身を信号機のぶん右に */
+	
+	/* ツールバーの高さを調整 */
 	#nav-bar-customization-target {
-		margin-left: 106px;
 		padding-top: 4px;
 		padding-bottom: 0;
+		margin-left: 8px;
+	}
+	
+	/* ツールバーの中身を信号機のぶん右に */
+	html:not([OSXLionFullscreen]) #nav-bar-customization-target {
+		margin-left: 106px !important;
 	}
 	
 	/* アドレスバーのボーダーを消す */
