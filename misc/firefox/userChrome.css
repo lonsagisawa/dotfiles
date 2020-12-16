@@ -1,25 +1,23 @@
-/* This userChrome.css works ONLY macOS. some styles are broken in Other OS (like Windows). */
+/* 
+  Make Firefox looks more native in macOS.
+*/
 
 @-moz-document url("chrome://browser/content/browser.xhtml") {
-	/* タブの位置をアドレスバーと入れ替え */
-	#navigator-toolbox {
-		display: flex;
-		flex-direction: column;
-	}
-	#titlebar {
-		order: 2;
-	}
-	/* ブックマークツールバーを隠す */
-	#PersonalToolbar {
+
+	/* Disable sidebar header for TST */
+	#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
 		display: none;
 	}
-
-	/* タイトルバースケスケに */
+	
+	/* 各部のバーが透けるようにする */
 	#TabsToolbar {
 		-moz-appearance: -moz-mac-vibrancy-light !important;
 	}
     #nav-bar {
         -moz-appearance: -moz-mac-vibrancy-light !important;
+	}
+	#PersonalToolbar {
+		-moz-appearance: -moz-mac-vibrancy-light !important;
 	}
 	#TabsToolbar:-moz-lwtheme-brighttext {
 		-moz-appearance: -moz-mac-vibrancy-dark !important;
@@ -27,46 +25,79 @@
     #nav-bar:-moz-lwtheme-brighttext {
         -moz-appearance: -moz-mac-vibrancy-dark !important;
     }
+    #PersonalToolbar:-moz-lwtheme-brighttext {
+		-moz-appearance: -moz-mac-vibrancy-dark !important;
+	}
     :root {
         background: transparent !important;
 	}
-	/* 非アクティブタブのタイトルの色を変更 */
-    #TabsToolbar:not(:-moz-lwtheme) {
-        color: black !important;
-	}
-	/* 信号機ボタンを上に持ってくる */
-	#TabsToolbar > .titlebar-buttonbox-container {
-		margin-top: -74px;
-	}
-	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #nav-bar {
-        padding-left: 76px;
-    }
-	/* 信号機ボタンをズラしてできた隙間を埋める */
-	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #TabsToolbar > .toolbar-items {
-		margin-left: -66px;
-	}
-	#TabsToolbar > .titlebar-spacer {
-		width: 0px !important;
-	}
-	/* タブ間ボーダーを消す */
-	.titlebar-spacer[type="pre-tabs"] {
-		border-inline-end: none !important;
-	}
 
-	/* サイドバーのヘッダーを小さく */
-    #sidebar-header {
-        font-size: 1em !important;
-        padding: 0 !important;
-    }
-    
-    
-    /* タブ間borderを消す */
-	.tabbrowser-tab::after {
-		border-left: none !important;
+	/*
+	  * ツールバーの順番を入れ替える
+	  * タイトルバーを消す
+	*/
+	#navigator-toolbox {
+		display: flex;
+		flex-direction: column;
 	}
-
-    /* アドレスバーの背景透過 */
-    #urlbar:not([open]) #urlbar-background {
-        opacity: 0.4;
-    }
+	#titlebar {
+		order: 1;
+		height: 0;
+	}
+	#PersonalToolbar {
+		order: 2;
+	}
+	
+	/* タブを消す */
+	.toolbar-items {
+		display: none;
+	}
+	/* 信号機を上にもっていく */
+	.titlebar-buttonbox-container {
+		margin-top: -39px;
+		padding-left: 6px;
+	}
+	/* 謎の罫線を消す */
+	.titlebar-spacer {
+		display: none;
+	}
+	/* ツールバーの中身を信号機のぶん右に */
+	#nav-bar-customization-target {
+		margin-left: 106px;
+		padding-top: 4px;
+		padding-bottom: 0;
+	}
+	
+	/* アドレスバーのボーダーを消す */
+	html#main-window {
+		--lwt-toolbar-field-border-color: transparent !important;
+		--urlbar-separator-color: transparent !important;
+	}
+	
+	/* ハンバーガーメニューの左の罫線を消す
+	   ハンバーガーメニューをやや左に寄せる */
+	#PanelUI-button {
+		border: 0 !important;
+		padding: 0 5px !important;
+	}
+	
+	/* ロケーションバーの位置を直す */
+	#urlbar[breakout] {
+		top: 5px !important;
+	}
+	
+	/* プライベートブラウジングのアイコンの位置を調整 */
+	.private-browsing-indicator {
+		margin-top: -40px;
+		margin-left: 2px;
+	}
+	
+	/* >> とハンバーガーメニューを若干下に寄せる */
+	#nav-bar-overflow-button {
+		margin-top: 5px !important;
+	}
+	#PanelUI-button {
+		margin-top: 5px;
+	}
+	
 }
