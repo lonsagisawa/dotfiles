@@ -1,66 +1,72 @@
-/* Disable sidebar header for TST */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-  display: none;
-}
+/* This userChrome.css works ONLY macOS. some styles are broken in Other OS (like Windows). */
 
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+	/* タブの位置をアドレスバーと入れ替え */
+	#navigator-toolbox {
+		display: flex;
+		flex-direction: column;
+	}
+	#titlebar {
+		order: 2;
+	}
+	/* ブックマークツールバーを隠す */
+	#PersonalToolbar {
+		display: none;
+	}
 
-/* Hide sidebar automatically in fullscreen mode */
-#main-window[inFullscreen] #sidebar-box,
-#main-window[inFullscreen] #sidebar-splitter {
-  display: none !important;
-  width: 0px !important;
-}
+	/* タイトルバースケスケに */
+	#TabsToolbar {
+		-moz-appearance: -moz-mac-vibrancy-light !important;
+	}
+    #nav-bar {
+        -moz-appearance: -moz-mac-vibrancy-light !important;
+	}
+	#TabsToolbar:-moz-lwtheme-brighttext {
+		-moz-appearance: -moz-mac-vibrancy-dark !important;
+	}
+    #nav-bar:-moz-lwtheme-brighttext {
+        -moz-appearance: -moz-mac-vibrancy-dark !important;
+    }
+    :root {
+        background: transparent !important;
+	}
+	/* 非アクティブタブのタイトルの色を変更 */
+    #TabsToolbar:not(:-moz-lwtheme) {
+        color: black !important;
+	}
+	/* 信号機ボタンを上に持ってくる */
+	#TabsToolbar > .titlebar-buttonbox-container {
+		margin-top: -74px;
+	}
+	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #nav-bar {
+        padding-left: 76px;
+    }
+	/* 信号機ボタンをズラしてできた隙間を埋める */
+	html[tabsintitlebar="true"]:not([OSXLionFullscreen]) #TabsToolbar > .toolbar-items {
+		margin-left: -66px;
+	}
+	#TabsToolbar > .titlebar-spacer {
+		width: 0px !important;
+	}
+	/* タブ間ボーダーを消す */
+	.titlebar-spacer[type="pre-tabs"] {
+		border-inline-end: none !important;
+	}
 
-/* stolen from https://github.com/not-holar/my_firefox_theme */
+	/* サイドバーのヘッダーを小さく */
+    #sidebar-header {
+        font-size: 1em !important;
+        padding: 0 !important;
+    }
+    
+    
+    /* タブ間borderを消す */
+	.tabbrowser-tab::after {
+		border-left: none !important;
+	}
 
-/*
-			REMOVE TAB BAR - START
-*/
-
-:root[sizemode="maximized"][tabsintitlebar="true"] #navigator-toolbox {
-	margin-top: 7px;
-}
-
-#toolbar-menubar,
-#TabsToolbar > :not(.titlebar-buttonbox-container):not(.private-browsing-indicator) {
-	visibility: collapse !important;
-}
-
-.private-browsing-indicator {
-	background-size: 60%;
-	margin-inline-end: 6px;
-}
-
-/* Workaround v2 (Since #nav-bar is bad at laying out children (it doesnt respect ::after's width on small window widths), just make it get out of the way)*/
-:root[tabsintitlebar="true"] #nav-bar {
-	margin-right: max(150px, calc(100vw / 6.6)) !important;
-
-	background: none !important;
-}
-/* Then move the background to the parent to preserve proper look */
-:root[tabsintitlebar="true"] #navigator-toolbox {
-	background-color: var(--toolbar-bgcolor);
-	background-image: var(--toolbar-bgimage);
-	background-clip: padding-box;
-}
-
-#titlebar {
-	padding: 0 !important;
-	-moz-appearance: none !important;
-	position: fixed !important;
-	left: 0 !important;
-	right: 0 !important;
-	height: 40px !important;
-	display: flex !important;
-	align-items: center;
-	justify-content: end;
-}
-
-
-/*
-			REMOVE TAB BAR - END
-*/
-
-#nav-bar-customization-target {
-	padding-left: 5px !important;
+    /* アドレスバーの背景透過 */
+    #urlbar:not([open]) #urlbar-background {
+        opacity: 0.4;
+    }
 }
