@@ -3,9 +3,7 @@ set -x EDITOR nvim
 set -x SHELL fish
 
 # PATH
-set -x PATH /opt/homebrew/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
-set -x PATH $HOME/.neovim/bin $PATH
 
 # aliases
 # alias vim="nvim"
@@ -14,7 +12,6 @@ alias gs="git status"
 alias gd="git diff"
 alias ls="exa -l"
 alias la="exa -la"
-alias brew_intel="arch -arch x86_64 /usr/local/bin/brew"
 
 # fisher
 if not functions -q fisher
@@ -25,7 +22,5 @@ end
 
 # suppress greeting
 set fish_greeting
-
-load_nvm
 
 starship init fish | source
