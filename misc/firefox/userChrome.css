@@ -8,13 +8,13 @@
 	#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
 		display: none;
 	}
-	
+
 	/* 各部のバーが透けるようにする */
 	#TabsToolbar {
 		-moz-appearance: -moz-mac-vibrancy-light !important;
 	}
-    #nav-bar {
-        -moz-appearance: -moz-mac-vibrancy-light !important;
+	#nav-bar {
+		-moz-appearance: -moz-mac-vibrancy-light !important;
 	}
 	#PersonalToolbar {
 		-moz-appearance: -moz-mac-vibrancy-light !important;
@@ -22,14 +22,14 @@
 	#TabsToolbar:-moz-lwtheme-brighttext {
 		-moz-appearance: -moz-mac-vibrancy-dark !important;
 	}
-    #nav-bar:-moz-lwtheme-brighttext {
-        -moz-appearance: -moz-mac-vibrancy-dark !important;
-    }
-    #PersonalToolbar:-moz-lwtheme-brighttext {
+	#nav-bar:-moz-lwtheme-brighttext {
 		-moz-appearance: -moz-mac-vibrancy-dark !important;
 	}
-    :root {
-        background: transparent !important;
+	#PersonalToolbar:-moz-lwtheme-brighttext {
+		-moz-appearance: -moz-mac-vibrancy-dark !important;
+	}
+	:root {
+		background: transparent !important;
 	}
 
 	/*
