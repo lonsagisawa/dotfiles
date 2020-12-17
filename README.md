@@ -1,48 +1,24 @@
-![Screenshot](https://i.imgur.com/MGReAwe.png)
-![Dirtier screenshot](https://i.imgur.com/cCFAN5T.png)
+![](https://user-images.githubusercontent.com/5173607/102468326-476c4400-4049-11eb-94dc-92c5b8a361ef.png)
 
-# dotfiles
+# New dotfiles for Apple Silicon Mac
 
-WIP dwm dotfiles
+## Recommended Apps
 
-## Requirement
+* Firefox  
+  The one and only web browser not polluted by Google. Free and open-source.
+* Alfred  
+  Spotlight replacement. PROPRIETARY but free(as a beer).
+* Bartender  
+  Make menubar organized. PROPRIETARY paid app.
+* Amphetamine  
+  Keep waking up MacBook. PROPRIETARY but free(as a beer).
+* Rectangle  
+  Adds basic window management. Free and open-source.
 
-* [dwm with autostart patch](https://github.com/lonsagisawa/arch-pkgs)
-* ttf-sarasa-gothic
-* inter-font
-* Neovim
-* xob
-* rofi
-* Nerd Fonts Symbols
+## Some tips
 
-```
-$ sudo pacman -S ttf-sarasa-gothic inter-font neovim rofi ttf-nerd-fonts-symbols
-$ yay -S xob
-```
-
-## Usage
-
-```
-$ git clone https://github.com/lonsagisawa/dotfiles
-```
-
-Can deploy with GNU Stow **other than `misc` folder**.
-
-```
-$ stow bspwm
-```
-
-## Japanese Input
-
-Install IBus and input method. I personally prefer `ibus-skk`.
-
-```
-$ sudo pacman -S ibus ibus-skk skk-jisyo
-```
-
-## Touchpad fix
-
-ThinkPad X240's trackpad has sleep issue. Place `misc/modprobe.d/psmouse.conf` into `/etc/modprobe.d/psmouse.conf` .
+* I currently running terminals on Rosetta 2.
+* I really recommend to enable three-finger drag.
 
 ## Neovim
 
@@ -53,20 +29,3 @@ $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 Then install plugins in nvim `:PluginInstall`
-
-## Other recommendations
-
-### Display Manager
-
-Didn't mentioned in any dotfiles, I use `lightdm` for display manager and `light-locker` for screen locker.
-
-```
-$ sudo pacman -S lightdm lightdm-gtk-greeter light-locker
-$ sudo systemctl enable lightdm
-```
-
-### fstrim
-
-```
-$ sudo systemctl fstrim.timer
-```
