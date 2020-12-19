@@ -4,6 +4,7 @@ set -x SHELL fish
 
 # PATH
 set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH /opt/homebrew/bin $PATH
 
 # aliases
 # alias vim="nvim"
@@ -12,6 +13,9 @@ alias gs="git status"
 alias gd="git diff"
 alias ls="exa -l"
 alias la="exa -la"
+alias brew="/usr/local/Homebrew/bin/brew"
+alias brew_arm="arch -arch arm64e /opt/homebrew/bin/brew"
+alias code="/usr/local/bin/code-insiders"
 
 # fisher
 if not functions -q fisher
@@ -22,5 +26,3 @@ end
 
 # suppress greeting
 set fish_greeting
-
-starship init fish | source
