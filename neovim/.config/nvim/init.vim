@@ -71,6 +71,9 @@ vnoremap k gk
 " Clipboard
 set clipboard+=unnamedplus
 
+" Mouse support
+set mouse=a
+
 " Colorscheme
 syntax on
 colorscheme dracula 
