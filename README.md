@@ -5,7 +5,7 @@
 ## Recommended Apps
 
 * Firefox  
-  The one and only web browser not polluted by Google. Free and open-source.
+  The one and only web browser not ruined by Google's anti-adblock strategy and Apple's too much restrictive attitude to browser extensions. Free and open-source.
 * Alfred  
   Spotlight replacement. PROPRIETARY but free(as a beer).
 * Bartender  
@@ -17,7 +17,6 @@
 * Some terminal  
   Apple's Terminal.app is really minimal and primitive terminal.  
   I recommend Alacritty if you are comfortable with tmux. If not, iTerm 2 is also great choice. Both are Free and open-source.
-
 
 ## Some tips
 
