@@ -318,9 +318,9 @@ colors:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /opt/homebrew/bin/fish
-  args:
-    - --login
+  program: /opt/homebrew/bin/tmux
+  # args:
+  #  - --login
 
 # Startup directory
 #
