@@ -26,3 +26,4 @@ end
 
 # suppress greeting
 set fish_greeting
+
