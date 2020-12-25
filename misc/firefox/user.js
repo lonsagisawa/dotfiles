@@ -19,3 +19,6 @@ user_pref("svg.context-properties.content.enabled", true);
 
 // font size
 user_pref("font.size.monospace.x-western", 16);
+
+// fix Japanese font fallback
+user_pref("font.preload-names-list", "Hiragino Sans, Hiragino Mincho ProN");
