@@ -41,6 +41,25 @@ Next, start terminal app in native. Homebrew needs to be installed manually, it 
 % curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 ```
 
+### Use Touch ID for sudo
+
+```shell
+sudo chmod +w /etc/pam.d/sudo
+sudo nvim /etc/pam.d/sudo
+```
+
+Add this line:
+
+```
+auth       sufficient     pam_tid.so
+```
+
+Save, then:
+
+```shell
+sudo chmod -w /etc/pam.d/sudo
+```
+
 ## Neovim
 
 Setup Vundle.vim first
