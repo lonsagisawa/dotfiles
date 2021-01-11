@@ -16,7 +16,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 
 " Colorscheme
-Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'arcticicestudio/nord-vim'
+
+" vim-polyglot
+Plugin 'sheerun/vim-polyglot'
 
 " vim-fugitive
 Plugin 'tpope/vim-fugitive'
@@ -76,12 +79,12 @@ set mouse=a
 
 " Colorscheme
 syntax on
-colorscheme dracula 
+colorscheme nord
 set background=dark
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'dracula',
+  \ 'colorscheme': 'nord',
   \ }
 
 " NERDTree
