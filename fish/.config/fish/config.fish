@@ -4,6 +4,7 @@ set -x SHELL fish
 
 # PATH
 set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH $HOME/.yarn/bin $PATH
 
 # aliases
 alias vim="nvim"
