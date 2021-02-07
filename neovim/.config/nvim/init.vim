@@ -82,6 +82,8 @@ syntax on
 colorscheme nord
 set background=dark
 
+set noshowmode
+
 " lightline
 let g:lightline = {
   \ 'colorscheme': 'nord',
