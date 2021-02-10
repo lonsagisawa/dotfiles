@@ -84,6 +84,11 @@ set background=dark
 
 set noshowmode
 
+" encoding/formats
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " lightline
 let g:lightline = {
   \ 'colorscheme': 'nord',
