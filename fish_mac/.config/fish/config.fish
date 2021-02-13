@@ -75,6 +75,4 @@ set -g fish_pager_color_description $comment
 # suppress greeting
 set fish_greeting
 
-# bobthefish
-set -g theme_nerd_fonts yes
-set -g theme_color_scheme nord
+set -g hydro_color_pwd $cyan
