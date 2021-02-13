@@ -50,6 +50,16 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Then install plugins in nvim `:PluginInstall`.
 
+## tmux
+
+Setup TPM first:
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Press `C-b I` to install plugins in tmux.
+
 ## Linux caveats
 
 ### Japanese Input
