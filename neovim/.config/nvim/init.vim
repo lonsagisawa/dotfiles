@@ -81,17 +81,20 @@ set mouse=a
 syntax on
 colorscheme nord
 set background=dark
+set cursorline
 
 set noshowmode
 
 " encoding/formats
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
 set fileformats=unix,dos,mac
 
 " lightline
 let g:lightline = {
   \ 'colorscheme': 'nord',
+  \ 'separator': {'left': '', 'right': ''},
+  \ 'subseparator': {'left': '', 'right': ''}
   \ }
 
 " NERDTree
