@@ -5,9 +5,9 @@ set -x fish_term256 1
 set -x fish_term24bit 1 
 
 # PATH
-set -x PATH $HOME/.cargo/bin $PATH
-set -x PATH /usr/local/bin $PATH
-set -x PATH /opt/homebrew/bin $PATH
+fish_add_path $HOME/.cargo/bin
+fish_add_path /usr/local/bin
+fish_add_path /opt/homebrew/bin
 
 # aliases
 ## Neovim
@@ -26,10 +26,10 @@ alias ls="exa -l"
 alias la="exa -la"
 
 ## homebrew workaround
-alias brew="arch -arch arm64 /opt/homebrew/bin/brew"
-alias brew_intel="arch -arch x86_64 /usr/local/bin/brew"
+#alias brew="arch -arch arm64 /opt/homebrew/bin/brew"
+#alias brew_intel="arch -arch x86_64 /usr/local/bin/brew"
 
-alias fish_intel="arch -arch x86_64 /usr/local/bin/fish"
+#alias fish_intel="arch -arch x86_64 /usr/local/bin/fish"
 
 # fisher
 if not functions -q fisher
