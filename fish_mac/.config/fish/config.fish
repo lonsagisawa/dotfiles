@@ -76,3 +76,9 @@ set -g fish_pager_color_description $comment
 set fish_greeting
 
 set -g hydro_color_pwd $cyan
+
+
+# pyenv init
+if command -v pyenv 1>/dev/null 2>&1
+  pyenv init - | source
+end
