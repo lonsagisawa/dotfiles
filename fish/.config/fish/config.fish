@@ -73,7 +73,16 @@ set -g fish_pager_color_description $comment
 # suppress greeting
 set fish_greeting
 
+# Prompt config
 set -g hydro_color_pwd $cyan
+
+# nvm
+switch (uname)
+  case Darwin
+    set -x nvm_default_version system
+  case Linux
+    set -x nvm_default_version lts
+end
 
 # pyenv init
 if command -v pyenv 1>/dev/null 2>&1
