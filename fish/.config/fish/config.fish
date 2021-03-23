@@ -1,20 +1,22 @@
 # variables
 set -x EDITOR nvim
 set -x SHELL fish
-set -x TERM alacritty
 set -x fish_term256 1
 set -x fish_term24bit 1 
 
 # PATH
-set -x PATH $HOME/.cargo/bin $PATH
-set -x PATH $HOME/.yarn/bin $PATH
+fish_add_path $HOME/.cargo/bin
 
-# WSL PATH
-set -x PATH "/mnt/c/Users/lon/AppData/Local/Programs/Microsoft VS Code/bin" $PATH
+switch (uname)
+  case Darwin
+    fish_add_path /opt/homebrew/bin
+end
 
 # aliases
+## Neovim
 alias vim="nvim"
 
+## git alias
 alias g="git"
 alias gs="git status"
 alias gd="git diff"
@@ -22,9 +24,11 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 
+## replace ls for exa
 alias ls="exa -l"
 alias la="exa -la"
 
+## homebrew workaround
 # fisher
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
@@ -69,6 +73,9 @@ set -g fish_pager_color_description $comment
 # suppress greeting
 set fish_greeting
 
-# bobthefish
-set -g theme_nerd_fonts yes
-set -g theme_color_scheme nord
+set -g hydro_color_pwd $cyan
+
+# pyenv init
+if command -v pyenv 1>/dev/null 2>&1
+  pyenv init - | source
+end
