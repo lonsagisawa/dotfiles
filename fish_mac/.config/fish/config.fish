@@ -6,8 +6,11 @@ set -x fish_term24bit 1
 
 # PATH
 fish_add_path $HOME/.cargo/bin
-fish_add_path /usr/local/bin
-fish_add_path /opt/homebrew/bin
+
+switch (uname)
+  case Darwin
+    fish_add_path /opt/homebrew/bin
+end
 
 # aliases
 ## Neovim
@@ -26,11 +29,6 @@ alias ls="exa -l"
 alias la="exa -la"
 
 ## homebrew workaround
-#alias brew="arch -arch arm64 /opt/homebrew/bin/brew"
-#alias brew_intel="arch -arch x86_64 /usr/local/bin/brew"
-
-#alias fish_intel="arch -arch x86_64 /usr/local/bin/fish"
-
 # fisher
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
@@ -76,7 +74,6 @@ set -g fish_pager_color_description $comment
 set fish_greeting
 
 set -g hydro_color_pwd $cyan
-
 
 # pyenv init
 if command -v pyenv 1>/dev/null 2>&1
