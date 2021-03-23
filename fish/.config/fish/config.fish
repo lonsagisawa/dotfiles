@@ -12,6 +12,14 @@ switch (uname)
     fish_add_path /opt/homebrew/bin
 end
 
+# nvm
+switch (uname)
+  case Darwin
+    set -x nvm_default_version system
+  case Linux
+    set -x nvm_default_version lts
+end
+
 # aliases
 ## Neovim
 alias vim="nvim"
@@ -75,14 +83,6 @@ set fish_greeting
 
 # Prompt config
 set -g hydro_color_pwd $cyan
-
-# nvm
-switch (uname)
-  case Darwin
-    set -x nvm_default_version system
-  case Linux
-    set -x nvm_default_version lts
-end
 
 # pyenv init
 if command -v pyenv 1>/dev/null 2>&1
