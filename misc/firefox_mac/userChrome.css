@@ -29,6 +29,9 @@
     #PersonalToolbar:-moz-lwtheme-brighttext {
         -moz-appearance: -moz-mac-vibrancy-dark !important;
     }
+    box {
+        -moz-appearance: -moz-mac-vibrancy-light !important;
+    }
     
     :root {
         background: transparent !important;
@@ -56,7 +59,7 @@
     }
     /* 信号機を上にもっていく */
     .titlebar-buttonbox-container {
-        margin-top: -39px;
+        margin-top: -34px;
         padding-left: 9px;
     }
     /* 謎の罫線を消す */
@@ -75,9 +78,15 @@
         padding: 0 5px !important;
     }
 
+    /* ツールバーの位置調整 */
+    #nav-bar {
+        margin-top: 2px;
+        margin-bottom: -3px;
+    }
+
     /* プライベートブラウジングのアイコンの位置を調整 */
     #titlebar-secondary-buttonbox {
-        margin-top: -40px;
+        margin-top: -35px;
         margin-left: 6px;
     }
 
