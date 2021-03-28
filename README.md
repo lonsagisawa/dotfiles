@@ -1,9 +1,8 @@
 # dotfiles
 
 dots of distro-hopper. Now settled on Apple Silicon Mac.
-
-![Mac screenshot](https://user-images.githubusercontent.com/5173607/107106757-84e29600-6870-11eb-9364-0f8c25990120.png)  
-![Dirtier dwm screenshot](https://i.imgur.com/cCFAN5T.png)
+<img width="1680" alt="Screenshot 2021-03-28 22 37 22" src="https://user-images.githubusercontent.com/5173607/112754459-2e473c00-9017-11eb-8031-d34e06741690.png">
+<img width="1680" alt="Screenshot 2021-03-28 22 40 27" src="https://user-images.githubusercontent.com/5173607/112754462-31dac300-9017-11eb-948d-fa630c4b9351.png">
 
 ## Linux Requirement
 
