@@ -36,12 +36,13 @@ alias gp="git push"
 alias ls="exa -l"
 alias la="exa -la"
 
-## homebrew workaround
 # fisher
 if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
+  if test -f $__fish_config_path/fish_plugins
+    echo -e 'To install Fisher:\ncurl -sL https://git.io/fisher | source && fisher update'
+  else
+    echo 'Something went wrong...'
+  end
 end
 
 # Nord color
@@ -80,9 +81,6 @@ set -g fish_pager_color_description $comment
 
 # suppress greeting
 set fish_greeting
-
-# Prompt config
-set -g hydro_color_pwd $cyan
 
 # pyenv init
 if command -v pyenv 1>/dev/null 2>&1
