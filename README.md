@@ -1,31 +1,9 @@
-# dotfiles
+# lonsagisawa/dotfiles
 
-dots of distro-hopper. Now settled on Apple Silicon Mac.
 <img width="1680" alt="Screenshot 2021-03-28 22 37 22" src="https://user-images.githubusercontent.com/5173607/112754459-2e473c00-9017-11eb-8031-d34e06741690.png">
 <img width="1680" alt="Screenshot 2021-03-28 22 40 27" src="https://user-images.githubusercontent.com/5173607/112754462-31dac300-9017-11eb-948d-fa630c4b9351.png">
 
-## Linux Requirement
-
-* [dwm with autostart patch](https://github.com/lonsagisawa/dwm)
-* ttf-sarasa-gothic
-* inter-font
-* Neovim
-* xob
-* rofi
-* Nerd Fonts Symbols
-
-```shell
-sudo pacman -S ttf-sarasa-gothic inter-font neovim rofi ttf-nerd-fonts-symbols
-yay -S xob
-```
-
-## Mac Requirement
-
-This dots designed to deploy with GNU Stow. It can be installed from Homebrew or MacPorts.
-
-```shell
-brew install stow
-```
+dotfiles for M1 MacBook Air setup. Some Linux/ThinkPad setup pieces also remains here.
 
 ## Usage
 
@@ -39,15 +17,44 @@ Can deploy with GNU Stow **other than `misc` folder**.
 stow neovim
 ```
 
-## Neovim
+## Mac instruction
 
-Setup Vundle.vim first:
+Install Homebrew first.
 
 ```shell
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Then install plugins in nvim `:PluginInstall`.
+This dots designed for deploy with GNU Stow.
+
+```shell
+/opt/homebrew/bin/brew install stow
+```
+
+I use fish for shell. My fish configuration has `$PATH` workaround for Homebrew on M1 and recommend to comfortable use.
+
+```shell
+/opt/homebrew/bin/brew install fish
+/opt/homebrew/bin/stow fish
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+```
+
+Then restart terminal and install fisher
+
+```shell
+curl -sL https://git.io/fisher | source && fisher update
+```
+
+## Neovim
+
+Setup vim-plug first:
+
+```shell
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+Then install plugins in nvim `:PlugInstall`.
 
 ## tmux
 
@@ -90,25 +97,4 @@ Better SSD life management.
 
 ```shell
 sudo systemctl fstrim.timer
-```
-
-## Mac recommendations
-
-### Use Touch ID for sudo
-
-```shell
-sudo chmod +w /etc/pam.d/sudo
-sudo nvim /etc/pam.d/sudo
-```
-
-Add this line:
-
-```
-auth       sufficient     pam_tid.so
-```
-
-Save, then:
-
-```shell
-sudo chmod -w /etc/pam.d/sudo
 ```
