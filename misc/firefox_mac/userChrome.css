@@ -60,7 +60,7 @@
     /* 信号機を上にもっていく */
     .titlebar-buttonbox-container {
         margin-top: -34px;
-        padding-left: 9px;
+        padding-left: 7px;
     }
     /* 謎の罫線を消す */
     .titlebar-spacer {
@@ -68,7 +68,7 @@
     }
     /* ツールバーの中身を信号機のぶん右に */
     html:not([OSXLionFullscreen]) #nav-bar-customization-target {
-        margin-left: 116px !important;
+        margin-left: 114px !important;
     }
     
     /* ハンバーガーメニューの左の罫線を消す
@@ -87,7 +87,7 @@
     /* プライベートブラウジングのアイコンの位置を調整 */
     #titlebar-secondary-buttonbox {
         margin-top: -35px;
-        margin-left: 6px;
+        margin-left: 4px;
     }
 
 }
