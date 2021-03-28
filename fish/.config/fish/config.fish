@@ -82,6 +82,8 @@ set -g fish_pager_color_description $comment
 # suppress greeting
 set fish_greeting
 
+set -g hydro_symbol_prompt ❯
+
 # pyenv init
 if command -v pyenv 1>/dev/null 2>&1
   pyenv init - | source
