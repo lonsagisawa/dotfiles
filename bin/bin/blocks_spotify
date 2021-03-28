@@ -1,7 +1,0 @@
-#!/bin/bash
-
-case "$(playerctl --player=spotify status 2>/dev/null)" in
-	Playing ) printf "Playing $(playerctl --player spotify metadata title) - $(playerctl --player spotify metadata artist)" ;;
-	Paused ) printf "Paused" ;;
-esac
-# vim: ft=sh
