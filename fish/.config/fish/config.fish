@@ -84,7 +84,8 @@ set fish_greeting
 
 set -g hydro_symbol_prompt ❯
 
-# pyenv init
-if command -v pyenv 1>/dev/null 2>&1
-  pyenv init - | source
-end
+# pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin 
+status is-login; and pyenv init --path | source
+pyenv init - | source
