@@ -19,13 +19,13 @@ window:
 # Font configuration
 font:
   normal:
-    family: 'SF Mono Square' 
+    family: 'HackGenNerd Console' 
     style: Regular
   bold:
     style: Bold
-  size: 17.0
+  size: 16.0
   offset:
-    y: 1
+    y: -1
 
 colors:
   primary:
