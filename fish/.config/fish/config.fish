@@ -9,7 +9,10 @@ fish_add_path $HOME/.cargo/bin
 
 switch (uname)
   case Darwin
+    # Homebrew
     fish_add_path /opt/homebrew/bin
+    # Node@16
+    fish_add_path /opt/homebrew/opt/node@16/bin
 end
 
 # nvm
