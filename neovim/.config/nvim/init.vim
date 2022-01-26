@@ -3,7 +3,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -38,7 +38,7 @@ set mouse=a
 
 " Colorscheme
 syntax on
-colorscheme dracula
+colorscheme nord
 set background=dark
 set cursorline
 
