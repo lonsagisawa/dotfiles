@@ -31,8 +31,10 @@ live_config_reload: true
 # tmux startup
 # Thanks to @rinsuki@mstdn.rinsuki.net
 shell:
-  program: /opt/homebrew/bin/fish
+  # program: /opt/homebrew/bin/fish
+  program: /bin/zsh
   args:
+    - -l
     - -c
     - "tmux a || tmux"
 
