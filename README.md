@@ -31,13 +31,10 @@ This dots designed for deploy with GNU Stow.
 /opt/homebrew/bin/brew install stow
 ```
 
-I use fish for shell. My fish configuration has `$PATH` workaround for Homebrew on M1 and recommend to comfortable use.
+I use zsh for shell. My fish configuration has `$PATH` workaround for Homebrew on M1 and recommend to comfortable use. Oh, clone zinit first!
 
 ```shell
-/opt/homebrew/bin/brew install fish
-/opt/homebrew/bin/stow fish
-echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
+git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
 ```
 
 Then restart terminal and install fisher
