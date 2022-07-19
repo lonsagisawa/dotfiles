@@ -3,7 +3,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'itchyny/lightline.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -38,7 +38,8 @@ set mouse=a
 
 " Colorscheme
 syntax on
-colorscheme nord
+let g:catppuccin_flavour = "mocha"
+colorscheme catppuccin
 set background=dark
 set cursorline
 
@@ -51,7 +52,7 @@ set fileformats=unix,dos,mac
 
 " lightline
 let g:lightline = {
-  \ 'colorscheme': 'nord',
+  \ 'colorscheme': 'catppuccin',
   \ 'separator': {'left': '', 'right': ''},
   \ 'subseparator': {'left': '', 'right': ''}
   \ }
