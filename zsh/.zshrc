@@ -21,7 +21,6 @@ typeset -U path PATH
 path=(
   /opt/homebrew/bin(N-/)
   /opt/homebrew/sbin(N-/)
-  /opt/homebrew/opt/node@16/bin(N-/)
   $HOME/.cargo/bin(N-/)
   /usr/bin
   /usr/sbin
