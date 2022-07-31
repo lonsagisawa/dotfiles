@@ -62,3 +62,6 @@ compinit
 
 # starship prompt
 eval "$(starship init zsh)"
+
+# fnm(Node.js version management)
+eval "$(fnm env --use-on-cd)"
