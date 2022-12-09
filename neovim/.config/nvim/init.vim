@@ -1,19 +1,25 @@
-" vim-plug
-" https://github.com/junegunn/vim-plug 
-call plug#begin(stdpath('data') . '/plugged')
-Plug 'junegunn/vim-plug'
-Plug 'itchyny/lightline.vim'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'lambdalisue/suda.vim'
-Plug 'ryanoasis/vim-devicons'
-call plug#end()
+" Jetpack
+let s:jetpackfile = stdpath('data') .. '/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+endif
+
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'junegunn/vim-plug'
+Jetpack 'itchyny/lightline.vim'
+Jetpack 'catppuccin/nvim', {'as': 'catppuccin'}
+Jetpack 'sheerun/vim-polyglot'
+Jetpack 'tpope/vim-fugitive'
+Jetpack 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Jetpack 'lambdalisue/suda.vim'
+Jetpack 'ryanoasis/vim-devicons'
+call jetpack#end()
 
 " True Color
 if exists('+termguicolors')
-	set termguicolors
+  set termguicolors
 endif
 
 " Line number
@@ -37,9 +43,16 @@ set clipboard+=unnamedplus
 set mouse=a
 
 " Colorscheme
+lua << EOF
+  require("catppuccin").setup({
+    flavour = "macchiato",
+    background = {
+      dark = "macchiato",
+    },
+  })
+  vim.cmd.colorscheme "catppuccin"
+EOF
 syntax on
-let g:catppuccin_flavour = "mocha"
-colorscheme catppuccin
 set background=dark
 set cursorline
 
