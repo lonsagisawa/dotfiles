@@ -9,6 +9,14 @@ function font_size()
   end
 end
 
+function default_domain()
+  if wezterm.target_triple == "aarch64-apple-darwin" then
+    return "local"
+  elseif wezterm.target_triple == "x86_64-pc-windows-msvc" then
+    return "WSL:Arch"
+  end
+end
+
 for _, dom in ipairs(wsl_domains) do
   dom.default_cwd = "~"
 end
@@ -35,7 +43,7 @@ return {
   font_size = font_size(),
   use_ime = true,
   wsl_domains = wsl_domains,
-  default_domain = "WSL:Arch",
+  default_domain = default_domain(),
   exit_behavior = "Close",
 }
 
