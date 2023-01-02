@@ -22,6 +22,7 @@ path=(
   /opt/homebrew/bin(N-/)
   /opt/homebrew/sbin(N-/)
   $HOME/.cargo/bin(N-/)
+  $HOME/.deno/bin(N-/)
   /usr/bin
   /usr/sbin
   /bin
@@ -54,6 +55,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # plugins
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light trystan2k/zsh-tab-title
 
 # Enable completions
 autoload -Uz compinit
@@ -64,3 +66,8 @@ eval "$(starship init zsh)"
 
 # fnm(Node.js version management)
 eval "$(fnm env --use-on-cd)"
+
+# Keychain
+keychain -q --nogui $HOME/.ssh/id_ed25519
+source $HOME/.keychain/$HOST-sh
+
