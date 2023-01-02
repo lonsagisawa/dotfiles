@@ -68,6 +68,8 @@ eval "$(starship init zsh)"
 eval "$(fnm env --use-on-cd)"
 
 # Keychain
-keychain -q --nogui $HOME/.ssh/id_ed25519
-source $HOME/.keychain/$HOST-sh
+if [[ $(uname) == Linux ]]; then
+  keychain -q --nogui $HOME/.ssh/id_ed25519
+  source $HOME/.keychain/$HOST-sh
+fi
 
