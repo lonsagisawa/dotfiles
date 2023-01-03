@@ -7,6 +7,7 @@ endif
 
 packadd vim-jetpack
 call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1}
 Jetpack 'junegunn/vim-plug'
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'catppuccin/nvim', {'as': 'catppuccin'}
