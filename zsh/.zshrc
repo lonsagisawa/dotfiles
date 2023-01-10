@@ -56,13 +56,11 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light trystan2k/zsh-tab-title
+zinit light spaceship-prompt/spaceship-prompt
 
 # Enable completions
 autoload -Uz compinit
 compinit
-
-# starship prompt
-eval "$(starship init zsh)"
 
 # fnm(Node.js version management)
 eval "$(fnm env --use-on-cd)"
