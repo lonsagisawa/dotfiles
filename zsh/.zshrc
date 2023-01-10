@@ -71,3 +71,8 @@ if [[ $(uname) == Linux ]]; then
   source $HOME/.keychain/$HOST-sh
 fi
 
+# Deno
+if [[ $(lsb_release -is) == Ubuntu ]]; then
+  export DENO_INSTALL="/home/lon/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+fi
