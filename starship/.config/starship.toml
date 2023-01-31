@@ -1,11 +1,5 @@
-add_newline = true
-
-format = """
-$all[ζ*）ㆆ_ㆆ）](yellow) $character
-"""
+"$schema" = 'https://starship.rs/config-schema.json'
 
 [character]
-success_symbol = "[❯](yellow)"
-
-[directory]
-style = "bold white"
+success_symbol = '[❯](bold white)'
+error_symbol = '[❯](bold red)'
