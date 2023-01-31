@@ -56,7 +56,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light trystan2k/zsh-tab-title
-zinit light spaceship-prompt/spaceship-prompt
 
 # Enable completions
 autoload -Uz compinit
@@ -72,7 +71,10 @@ if [[ $(uname) == Linux ]]; then
 fi
 
 # Deno
-if [[ $(lsb_release -is) == Ubuntu ]]; then
+if [[ $(lsb_release -is) == Gentoo || Ubuntu ]]; then
   export DENO_INSTALL="/home/lon/.deno"
-  export PATH="$DENO_INSTALL/bin:$PATH"
 fi
+
+# starship
+eval "$(starship init zsh)"
+
