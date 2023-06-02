@@ -56,10 +56,14 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light trystan2k/zsh-tab-title
+zinit light zsh-users/zsh-syntax-highlighting
 
 # Enable completions
 autoload -Uz compinit
 compinit
+
+# syntax highlight color scheme
+source ~/.zsh/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 
 # fnm(Node.js version management)
 eval "$(fnm env --use-on-cd)"
