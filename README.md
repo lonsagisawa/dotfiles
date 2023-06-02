@@ -1,8 +1,8 @@
 # lonsagisawa/dotfiles
 
-<img width="1680" alt="Screenshot 2022-07-19 22 16 38" src="https://user-images.githubusercontent.com/5173607/179759587-afd6648b-78f9-40af-bbe8-3fe7e4347ab3.png">
+<img width="1680" alt="Screenshot 2022-07-19 22 16 38" src="https://github.com/lonsagisawa/dotfiles/raw/master/20230423_23h54m26s_grim.png">
 
-dotfiles for my MacBook Air(M1).
+dotfiles for my Linux laptop, currently pure wayland setup of Hyprland.
 
 ## Instruction
 
@@ -10,7 +10,7 @@ dotfiles for my MacBook Air(M1).
 git clone https://github.com/lonsagisawa/dotfiles
 ```
 
-Install Homebrew first.
+for macOS, install Homebrew first.
 
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
