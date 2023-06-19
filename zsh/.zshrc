@@ -75,7 +75,8 @@ if [[ $(uname) == Linux ]]; then
 fi
 
 # Deno
-if [[ $(lsb_release -is) == Gentoo || Ubuntu ]]; then
+
+if [[ $(uname) == Linux && $(lsb_release -is) == Gentoo || Ubuntu ]]; then
   export DENO_INSTALL="/home/lon/.deno"
 fi
 
