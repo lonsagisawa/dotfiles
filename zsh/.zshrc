@@ -23,6 +23,7 @@ path=(
   /opt/homebrew/sbin(N-/)
   $HOME/.cargo/bin(N-/)
   $HOME/.deno/bin(N-/)
+  $HOME/.composer/vendor/bin(N-/)
   /usr/bin
   /usr/sbin
   /bin
