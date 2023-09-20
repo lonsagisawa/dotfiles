@@ -16,6 +16,9 @@ setopt auto_cd
 # correct spelling
 setopt correct
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+
 # PATH
 typeset -U path PATH
 path=(
@@ -31,6 +34,7 @@ path=(
   /usr/local/bin(N-/)
   /usr/local/sbin(N-/)
   /Library/Apple/usr/bin
+  $BUN_INSTALL/bin
 )
 
 # aliases
@@ -45,9 +49,9 @@ alias ga="git add"
 alias gc="git commit"
 alias gp="git push"
 
-## replace ls for exa
-alias ls="exa -l"
-alias la="exa -la"
+## replace ls for eza
+alias ls="eza -l"
+alias la="eza -la"
 
 # zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -76,10 +80,12 @@ if [[ $(uname) == Linux ]]; then
 fi
 
 # Deno
-
 if [[ $(uname) == Linux && $(lsb_release -is) == Gentoo || Ubuntu ]]; then
   export DENO_INSTALL="/home/lon/.deno"
 fi
+
+# bun completions
+[ -s "/home/lon/.bun/_bun" ] && source "/home/lon/.bun/_bun"
 
 # starship
 eval "$(starship init zsh)"
