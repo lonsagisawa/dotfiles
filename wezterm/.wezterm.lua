@@ -14,12 +14,20 @@ end
 
 -- OS specific - Default domain
 function default_domain()
-  if wezterm.target_triple == "aarch64-apple-darwin" then
-    -- macOS
-    return "local"
-  elseif wezterm.target_triple == "x86_64-pc-windows-msvc" then
+  if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     -- Windows
-    return "WSL:Ubuntu"
+    return "WSL:Debian"
+  else
+    return "local"
+  end
+end
+
+-- OS specific - Windows decoration
+function window_decorations()
+  if wezterm.target_triple == "aarch64-apple-darwin" then
+    return "RESIZE"
+  else
+    return "INTEGRATED_BUTTONS|RESIZE"
   end
 end
 
@@ -39,13 +47,20 @@ return {
   },
   -- window padding
   window_padding = {
-    left = "8px",
-    right = "8px",
-    top = "8px",
-    bottom = "8px",
+    left = "10pt",
+    right = "10pt",
+    top = "10pt",
+    bottom = "10pt",
+  },
+  -- window frame
+  window_frame = {
+    font = wezterm.font("UDEV Gothic NFLG"),
+    font_size = 12.0,
+    active_titlebar_bg = "#181825",
+    inactive_titlebar_bg = "#181825",
   },
   -- tabbar
-  use_fancy_tab_bar = false,
+  use_fancy_tab_bar = true,
   tab_bar_at_bottom = false,
   tab_max_width = 48,
   -- color scheme
@@ -58,10 +73,11 @@ return {
   -- ime
   use_ime = true,
   -- window border
-  window_decorations = "RESIZE",
+  window_decorations = window_decorations(),
   -- WSL specific
   wsl_domains = wsl_domains,
   default_domain = default_domain(),
   -- behavior
   exit_behavior = "Close",
 }
+
