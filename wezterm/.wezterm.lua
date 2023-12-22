@@ -1,39 +1,48 @@
-local wezterm = require "wezterm"
+local wezterm = require("wezterm")
 local wsl_domains = wezterm.default_wsl_domains()
 
--- OS specific - Font size
-function font_size()
+function isWindows()
+  if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+    return true
+  else
+    return false
+  end
+end
+
+function isMac()
   if wezterm.target_triple == "aarch64-apple-darwin" then
-    -- macOS
-    return 15
-  elseif wezterm.target_triple == "x86_64-pc-windows-msvc" then
-    -- Windows
+    return true
+  else
+    return false
+  end
+end
+
+-- OS specific - Font size
+function fontSize()
+  if isMac() == true then
+    return 14
+  else
     return 11
   end
 end
 
 -- OS specific - Default domain
-function default_domain()
-  if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+function defaultDomain()
+  if isWindows() == true then
     -- Windows
     return "WSL:Debian"
-  else
+  else 
     return "local"
   end
 end
 
 -- OS specific - Windows decoration
-function window_decorations()
-  if wezterm.target_triple == "aarch64-apple-darwin" then
-    return "RESIZE"
-  else
+function windowDecorations()
+  if isWindows() == true then
     return "INTEGRATED_BUTTONS|RESIZE"
+  else 
+    return "TITLE|RESIZE"
   end
-end
-
--- WSL - Default work directory
-for _, dom in ipairs(wsl_domains) do
-  dom.default_cwd = "~"
 end
 
 return {
@@ -47,37 +56,37 @@ return {
   },
   -- window padding
   window_padding = {
-    left = "10pt",
-    right = "10pt",
-    top = "10pt",
-    bottom = "10pt",
+    left = "2cell",
+    right = "2cell",
+    top = "0.5cell",
+    bottom = "0.5cell",
   },
   -- window frame
   window_frame = {
-    font = wezterm.font("UDEV Gothic NFLG"),
-    font_size = 12.0,
+    font = wezterm.font("Yu Gothic UI"),
+    font_size = 10,
     active_titlebar_bg = "#181825",
     inactive_titlebar_bg = "#181825",
   },
   -- tabbar
-  use_fancy_tab_bar = true,
+  use_fancy_tab_bar = isWindows(),
   tab_bar_at_bottom = false,
   tab_max_width = 48,
   -- color scheme
   color_scheme = "Catppuccin Mocha",
   -- font
-  font = wezterm.font("UDEV Gothic NFLG"),
-  font_size = font_size(),
+  font = wezterm.font_with_fallback { "CaskaydiaCove NF", "LINE Seed JP_TTF" },
+  font_size = fontSize(),
   freetype_load_flags = "NO_HINTING",
-  line_height = 1.25,
+  line_height = 1.4,
   -- ime
   use_ime = true,
   -- window border
-  window_decorations = window_decorations(),
+  window_decorations = windowDecorations(),
   -- WSL specific
   wsl_domains = wsl_domains,
-  default_domain = default_domain(),
+  default_domain = defaultDomain(),
   -- behavior
   exit_behavior = "Close",
+  front_end = "WebGpu",
 }
-
