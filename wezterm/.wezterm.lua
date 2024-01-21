@@ -65,13 +65,37 @@ return {
   window_frame = {
     font = wezterm.font("Yu Gothic UI"),
     font_size = 10,
-    active_titlebar_bg = "#181825",
-    inactive_titlebar_bg = "#181825",
+    active_titlebar_bg = "#11111b",
+    inactive_titlebar_bg = "#11111b",
   },
   -- tabbar
   use_fancy_tab_bar = IsWindows(),
   tab_bar_at_bottom = false,
   tab_max_width = 48,
+  colors = {
+    tab_bar = {
+      active_tab = {
+        bg_color = "#1e1e2e",
+        fg_color = "#cdd6f4",
+      },
+      inactive_tab = {
+        bg_color = "#11111b",
+        fg_color = "#6c7086",
+      },
+      inactive_tab_hover = {
+        bg_color = "#1e1e2e",
+        fg_color = "#cdd6f4",
+      },
+      new_tab = {
+        bg_color = "#1e1e2e",
+        fg_color = "#cdd6f4",
+      },
+      new_tab_hover = {
+        bg_color = "#313244",
+        fg_color = "#cdd6f4",
+      },
+    },
+  },
   -- color scheme
   color_scheme = "Catppuccin Mocha",
   -- font
