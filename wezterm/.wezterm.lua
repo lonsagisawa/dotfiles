@@ -20,7 +20,7 @@ end
 -- OS specific - Font size
 function FontSize()
   if IsMac() then
-    return 14
+    return 13
   else
     return 10.5
   end
@@ -38,10 +38,20 @@ end
 
 -- OS specific - Windows decoration
 function WindowDecorations()
-  if IsWindows() then
+  if (IsWindows() or IsMac()) then
     return "INTEGRATED_BUTTONS|RESIZE"
   else
     return "TITLE|RESIZE"
+  end
+end
+
+function WindowFrameFont()
+  if IsWindows() then
+    return wezterm.font("Yu Gothic UI")
+  elseif IsMac() then
+    return wezterm.font_with_fallback { "SF Pro", "Hiragino Sans" }
+  else
+    return wezterm.font("Fira Code")
   end
 end
 
@@ -63,8 +73,8 @@ return {
   },
   -- window frame
   window_frame = {
-    font = wezterm.font("Yu Gothic UI"),
-    font_size = 10,
+    font = WindowFrameFont(),
+    font_size = FontSize(),
     active_titlebar_bg = "#11111b",
     inactive_titlebar_bg = "#11111b",
   },
