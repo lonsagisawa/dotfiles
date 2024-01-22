@@ -79,7 +79,7 @@ return {
     inactive_titlebar_bg = "#11111b",
   },
   -- tabbar
-  use_fancy_tab_bar = IsWindows(),
+  use_fancy_tab_bar = (IsWindows() or IsMac()),
   tab_bar_at_bottom = false,
   tab_max_width = 48,
   colors = {
