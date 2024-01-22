@@ -83,29 +83,29 @@ return {
   tab_bar_at_bottom = false,
   tab_max_width = 48,
   colors = {
-    tab_bar = {
-      active_tab = {
-        bg_color = "#1e1e2e",
-        fg_color = "#cdd6f4",
-      },
-      inactive_tab = {
-        bg_color = "#11111b",
-        fg_color = "#6c7086",
-      },
-      inactive_tab_hover = {
-        bg_color = "#1e1e2e",
-        fg_color = "#cdd6f4",
-      },
-      new_tab = {
-        bg_color = "#1e1e2e",
-        fg_color = "#cdd6f4",
-      },
-      new_tab_hover = {
-        bg_color = "#313244",
-        fg_color = "#cdd6f4",
-      },
-    },
-  },
+		tab_bar = {
+			active_tab = {
+				bg_color = "#1e1e2e",
+				fg_color = "#cba6f7",
+			},
+			inactive_tab = {
+				bg_color = "#11111b",
+				fg_color = "#6c7086",
+			},
+			inactive_tab_hover = {
+				bg_color = "#1e1e2e",
+				fg_color = "#cdd6f4",
+			},
+			new_tab = {
+				bg_color = "#1e1e2e",
+				fg_color = "#cba6f7",
+			},
+			new_tab_hover = {
+				bg_color = "#cba6f7",
+				fg_color = "#1e1e2e",
+			},
+		},
+	},
   -- color scheme
   color_scheme = "Catppuccin Mocha",
   -- font
