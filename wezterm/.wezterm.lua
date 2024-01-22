@@ -38,7 +38,7 @@ end
 
 -- OS specific - Windows decoration
 function WindowDecorations()
-  if (IsWindows() or IsMac()) then
+  if IsWindows() then
     return "INTEGRATED_BUTTONS|RESIZE"
   else
     return "TITLE|RESIZE"
@@ -79,7 +79,7 @@ return {
     inactive_titlebar_bg = "#11111b",
   },
   -- tabbar
-  use_fancy_tab_bar = (IsWindows() or IsMac()),
+  use_fancy_tab_bar = IsWindows(),
   tab_bar_at_bottom = false,
   tab_max_width = 48,
   colors = {
