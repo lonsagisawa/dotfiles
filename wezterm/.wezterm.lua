@@ -22,7 +22,7 @@ function FontSize()
   if IsMac() then
     return 13
   else
-    return 10.5
+    return 11
   end
 end
 
@@ -83,44 +83,39 @@ return {
   tab_bar_at_bottom = false,
   tab_max_width = 48,
   colors = {
-		tab_bar = {
-			active_tab = {
-				bg_color = "#1e1e2e",
-				fg_color = "#cba6f7",
-			},
-			inactive_tab = {
-				bg_color = "#11111b",
-				fg_color = "#6c7086",
-			},
-			inactive_tab_hover = {
-				bg_color = "#1e1e2e",
-				fg_color = "#cdd6f4",
-			},
-			new_tab = {
-				bg_color = "#1e1e2e",
-				fg_color = "#cba6f7",
-			},
-			new_tab_hover = {
-				bg_color = "#cba6f7",
-				fg_color = "#1e1e2e",
-			},
-		},
-	},
+    tab_bar = {
+      active_tab = {
+	bg_color = "#1e1e2e",
+	fg_color = "#cba6f7",
+      },
+      inactive_tab = {
+	bg_color = "#11111b",
+	fg_color = "#6c7086",
+      },
+      inactive_tab_hover = {
+	bg_color = "#1e1e2e",
+	fg_color = "#cdd6f4",
+      },
+      new_tab = {
+	bg_color = "#1e1e2e",
+	fg_color = "#cba6f7",
+      },
+      new_tab_hover = {
+        bg_color = "#cba6f7",
+	fg_color = "#1e1e2e",
+      },
+    },
+  },
   -- color scheme
   color_scheme = "Catppuccin Mocha",
   -- font
   font = wezterm.font_with_fallback {
-    {
-      family = "Fira Code",
-      weight = 450,
-      harfbuzz_features = { "cv02", "cv10", "ss01", "cv14" },
-    },
+    "Cascadia Code PL",
     "LINE Seed JP_TTF",
-    "Symbols Nerd Font",
   },
   font_size = FontSize(),
   freetype_load_flags = "NO_HINTING",
-  line_height = 1.6,
+  line_height = 1.7,
   -- ime
   use_ime = true,
   -- window border
