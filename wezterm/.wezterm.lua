@@ -110,12 +110,15 @@ return {
   color_scheme = "Catppuccin Mocha",
   -- font
   font = wezterm.font_with_fallback {
-    "Cascadia Code PL",
-    "LINE Seed JP_TTF",
+    {
+      family = "Monaspace Argon",
+      harfbuzz_features = {'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'},
+    },
+    "M PLUS 1 Code",
   },
   font_size = FontSize(),
   freetype_load_flags = "NO_HINTING",
-  line_height = 1.7,
+  line_height = 1.75,
   -- ime
   use_ime = true,
   -- window border
@@ -125,5 +128,5 @@ return {
   default_domain = WslDefaultDomain(),
   -- behavior
   exit_behavior = "Close",
-  front_end = "WebGpu",
+  front_end = "OpenGL",
 }
