@@ -20,7 +20,7 @@ end
 -- OS specific - Font size
 function FontSize()
   if IsMac() then
-    return 13
+    return 14
   else
     return 11
   end
@@ -110,15 +110,14 @@ return {
   color_scheme = "Catppuccin Mocha",
   -- font
   font = wezterm.font_with_fallback {
-    {
-      family = "Monaspace Argon",
-      harfbuzz_features = {'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'},
-    },
-    "M PLUS 1 Code",
+    "Cascadia Code",
+		"BIZ UDGothic",
   },
   font_size = FontSize(),
   freetype_load_flags = "NO_HINTING",
-  line_height = 1.75,
+  freetype_load_target = "Light",
+	freetype_render_target = "HorizontalLcd",
+  line_height = 1.6,
   -- ime
   use_ime = true,
   -- window border
