@@ -1,22 +1,37 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 28, // Waybar height (to be removed for auto height)
+    "height": 38, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 16, // Gaps between modules (4px)
-    "margin-top": 5,
-    "margin-left": 8,
-    "margin-right": 8,
+    "spacing": 2, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "hyprland/window"],
-    "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["idle_inhibitor", "custom/pacman", "pulseaudio", "backlight", "battery", "clock", "tray"],
     // Modules configuration
-    "wlr/workspaces": {
-        "on-click": "activate",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1"
-    },   
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        }
+    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -28,8 +43,8 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{icon} {percent}%",
-        "format-icons": [""]
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰖨"]
     },
     "battery": {
         "states": {
@@ -37,42 +52,60 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": "{capacity}%",
-        "format-alt": "{icon} {time}",
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}󱐋",
+        "format-plugged": "{capacity}% {icon}󰚥",
+        "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"]
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{essid} {ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "hyprland/window": {
+        "max-length": 50,
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        // "format": "{volume}% {icon} {format_source}",
-        "format": "{icon} {volume}%",
+        "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󱡏",
+            "headset": "󱡏",
             "phone": "",
             "portable": "",
             "car": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
+    "mpris": {
+        "format": "{player_icon} 󰐌 {title}",
+        "format-paused": "{player_icon} {status_icon} <i>{title}</i>",
+        "player-icons": {
+            "default": "󰐌",
+            "firefox": "󰈹",
+        },
+        "status-icons": {
+            "paused": "󰏥"
+        },
+        // "ignored-players": ["firefox"]
+    },
+    "custom/pacman": {
+        "format": "{icon}{} ",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+            "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates"
+    },
 }
 
