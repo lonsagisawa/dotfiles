@@ -15,20 +15,23 @@ menupopup:not(.in-menulist) > menu {
 /* Override Normal Density height to Compact Density height (plus room for context-line) only for tabs 1/16/2022 */
 
 #TabsToolbar, #tabbrowser-tabs {
-    --tab-min-height: 31px !important;
+  --tab-min-height: 31px !important;
 }
-    /* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
+/* Tweak for covering a line at the bottom of the active tab on some themes 8/11/2021 */
 #main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar, 
 #main-window[sizemode="normal"] #toolbar-menubar[autohide="true"] + #TabsToolbar #tabbrowser-tabs {
-    --tab-min-height: 32px !important;
+  --tab-min-height: 32px !important;
 }
 #scrollbutton-up,
 #scrollbutton-down {
-    border-top-width: 0 !important;
-    border-bottom-width: 0 !important;
+  border-top-width: 0 !important;
+  border-bottom-width: 0 !important;
 }
 
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-    visibility: collapse;
-  }
+  visibility: collapse;
+}
   
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
+  visibility: collapse;
+}
