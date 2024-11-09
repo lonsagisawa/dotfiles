@@ -4,10 +4,9 @@
 
 ### Typography
 
-font-family = CommitMono
+font-family = Lilex
 
-font-feature = cv06
-font-feature = cv08
+font-feature = zero
 # HACK: Unintended Japanese ligatures like 株式会社 workaround
 font-feature = -dlig
 
@@ -15,13 +14,13 @@ font-size = 11
 
 # line-height
 # 100% = 200% of original
-adjust-cell-height = 100%
+adjust-cell-height = 50%
 
 # make underline little bit lower
 adjust-underline-position = 2
 
 # Japanese font mapping
-font-codepoint-map = U+3042-U+3096,U+30A0-U+30FF,U+3400-U+4DB5,U+4E00-U+9FCB,U+F900-U+FA6A,U+2E80-U+2FD5,U+FF5F-U+FF9F,U+3000-U+303F,U+31F0-U+31FF,U+3220-U+3243,U+3280-U+337F,U+FF01-U+FF5E=BIZ UDGothic
+font-codepoint-map = U+3042-U+3096,U+30A0-U+30FF,U+3400-U+4DB5,U+4E00-U+9FCB,U+F900-U+FA6A,U+2E80-U+2FD5,U+FF5F-U+FF9F,U+3000-U+303F,U+31F0-U+31FF,U+3220-U+3243,U+3280-U+337F,U+FF01-U+FF5E=IBM Plex Sans JP
 # When nerd font integration is broken
 # font-codepoint-map = U+E000-U+E00A,U+EA60-U+EBEB,U+E0A0-U+E0C8,U+E0CA,U+E0CC-U+E0D4,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E6B1,U+E700-U+E7C5,U+F000-U+F2E0,U+F300-U+F372,U+F400-U+F532,U+F0001-U+F1AF0=Symbols Nerd Font Mono
 
