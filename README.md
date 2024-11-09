@@ -1,8 +1,8 @@
 # lonsagisawa/dotfiles
 
-<img width="1680" alt="Screenshot 2022-07-19 22 16 38" src="https://github.com/lonsagisawa/dotfiles/raw/master/20240216_01h45m52s_grim.png">
+<img width="1680" alt="Screenshot 2022-07-19 22 16 38" src="https://github.com/lonsagisawa/dotfiles/raw/master/Screenshot_20241110_033141.png">
 
-dots of tinkerer. currently in Hyprland + Arch Linux. Some configurations has compatibility or intended usage for MacBook supplied from employer.
+dots of tinkerer. currently in Fedora KDE and macOS Sequoia.
 
 ## Instruction
 
@@ -24,7 +24,10 @@ for macOS, install Homebrew first.
 This dots designed for deploy with GNU Stow.
 
 ```shell
+# macOS
 brew install stow
-stow neovim
-```
+# Fedora
+sudo dnf install stow
 
+stow ghostty-linux
+```
