@@ -11,13 +11,13 @@ switch (uname)
     case Linux
         # Deno
         set -gx DENO_INSTALL $HOME/.deno
-        fish_add_path --path --append $DENO_INSTALL/bin
+        fish_add_path --path $DENO_INSTALL/bin
     case Darwin
         # macOS specific configuration
 
         # Homebrew
-        fish_add_path --path --append /opt/homebrew/bin
-        fish_add_path --path --append /opt/homebrew/sbin
+        fish_add_path --path /opt/homebrew/bin
+        fish_add_path --path /opt/homebrew/sbin
 
         # miniforge
         if test -f /opt/homebrew/Caskroom/miniforge/base/bin/conda
@@ -32,19 +32,19 @@ set --global theme_color_scheme "Catppuccin Mocha"
 
 # bun
 set -gx BUN_INSTALL $HOME/.bun
-fish_add_path --path --append $BUN_INSTALL/bin
+fish_add_path --path $BUN_INSTALL/bin
 
 # cargo
-fish_add_path --path --append $HOME/.cargo/bin
+fish_add_path --path $HOME/.cargo/bin
 
 # composer
-fish_add_path --path --append $HOME/.composer/vendor/bin
+fish_add_path --path $HOME/.composer/vendor/bin
 
 # mise
 if test -e ~/.local/bin/mise
     $HOME/.local/bin/mise activate fish | source
     mise completion fish > $HOME/.config/fish/completions/mise.fish
-    status is-interactive && fish_add_path --path --append $HOME/.local/share/mise/shims
+    status is-interactive && fish_add_path --path $HOME/.local/share/mise/shims
 end
 
 # fzf
@@ -66,4 +66,3 @@ alias lg="lazygit"
 alias ls="eza -l"
 alias la="eza -la"
 
-alias mise_nvim_update="mise use --global neovim@nightly"
