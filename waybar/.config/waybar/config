@@ -1,30 +1,11 @@
 {
     // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 38, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 36, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "mpris"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "custom/pacman", "pulseaudio", "backlight", "battery", "clock", "tray"],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["mpris", "idle_inhibitor", "power-profiles-daemon", "pulseaudio", "backlight", "battery", "tray"],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -60,9 +41,6 @@
         // "format-full": "",
         "format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "hyprland/window": {
         "max-length": 50,
     },
@@ -97,15 +75,15 @@
         },
         // "ignored-players": ["firefox"]
     },
-    "custom/pacman": {
-        "format": "{icon}{} ",
-        "return-type": "json",
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
         "format-icons": {
-            "pending-updates": " ",
-            "updated": ""
-        },
-        "exec-if": "which waybar-updates",
-        "exec": "waybar-updates"
-    },
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+        }
+    }
 }
-
