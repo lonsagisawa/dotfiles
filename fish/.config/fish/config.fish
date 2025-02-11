@@ -44,7 +44,6 @@ fish_add_path --path $HOME/.composer/vendor/bin
 if test -e ~/.local/bin/mise
     $HOME/.local/bin/mise activate fish | source
     mise completion fish > $HOME/.config/fish/completions/mise.fish
-    status is-interactive && fish_add_path --path $HOME/.local/share/mise/shims
 end
 
 # fzf
@@ -66,4 +65,3 @@ alias lg="lazygit"
 
 alias ls="eza -l"
 alias la="eza -la"
-
