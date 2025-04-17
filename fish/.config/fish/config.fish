@@ -41,8 +41,8 @@ fish_add_path --path $HOME/.cargo/bin
 fish_add_path --path $HOME/.composer/vendor/bin
 
 # mise
-if test -e ~/.local/bin/mise
-    $HOME/.local/bin/mise activate fish | source
+if type -q mise
+    mise activate fish | source
     mise completion fish > $HOME/.config/fish/completions/mise.fish
 end
 
