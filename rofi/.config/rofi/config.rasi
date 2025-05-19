@@ -1,0 +1,33 @@
+@import "catppuccin-mocha"
+
+configuration {
+    font: "monospace 12";
+    icon-theme: "Papirus-Light";
+}
+
+* {
+    background: var(base);
+    lightfg: var(surface0);
+    lightbg: var(blue);
+    normal-background: var(base);
+    alternate-normal-background: var(base);
+    normal-foreground: var(text);
+    alternate-normal-foreground: var(text);
+    separatorcolor: var(overlay2);
+}
+
+entry {
+    placeholder-color: var(overlay2);
+}
+
+num-filtered-rows {
+    text-color: var(overlay2);
+}
+
+num-rows {
+    text-color: var(overlay2);
+}
+
+textbox-num-sep {
+    text-color: var(overlay2);
+}
