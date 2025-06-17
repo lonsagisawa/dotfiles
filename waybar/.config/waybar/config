@@ -3,9 +3,9 @@
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 36, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "idle_inhibitor", "power-profiles-daemon", "pulseaudio", "backlight", "battery", "tray"],
+    "modules-right": ["mpris", "idle_inhibitor", "power-profiles-daemon", "pulseaudio", "battery", "tray"],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
