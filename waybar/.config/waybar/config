@@ -5,12 +5,12 @@
     "spacing": 2, // Gaps between modules (4px)
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
-    "modules-right": ["mpris", "idle_inhibitor", "power-profiles-daemon", "pulseaudio", "battery", "tray"],
+    "modules-right": ["mpris", "idle_inhibitor", "power-profiles-daemon", "pulseaudio", "battery", "tray", "custom/notification"],
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "󰅶",
-            "deactivated": "󰾪"
+            "activated": "󰅶 ",
+            "deactivated": "󰾪 "
         }
     },
     "tray": {
@@ -80,10 +80,31 @@
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
+        "default": " ",
+        "performance": " ",
+        "balanced": " ",
+        "power-saver": " "
         }
-    }
+    },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 }
+// vim: set ft=jsonc:
