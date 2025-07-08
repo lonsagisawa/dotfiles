@@ -10,9 +10,7 @@
         "de",
         "wm",
         "cpu",
-        "gpu",
         "terminal",
-        "terminalfont",
         "memory"
     ]
 }
