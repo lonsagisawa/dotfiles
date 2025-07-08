@@ -33,11 +33,14 @@ environment {
 }
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "swaync"
 spawn-at-startup "fcitx5"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "ghostty" "--initial-window=false"
+spawn-at-startup "swaybg" "-c" "1e1e2e"
+spawn-at-startup "nm-applet"
 
 layout {
     gaps 8
