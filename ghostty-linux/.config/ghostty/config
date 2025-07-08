@@ -4,13 +4,9 @@
 
 ### Typography
 
-font-family = Maple Mono
+font-family = CommitMono
 font-family = Noto Sans CJK JP
 
-font-feature = cv01
-font-feature = cv02
-font-feature = cv61
-font-feature = cv62
 # HACK: Unintended Japanese ligatures like 株式会社 workaround
 font-feature = -dlig
 
@@ -46,3 +42,6 @@ window-theme = ghostty
 resize-overlay-duration = 250ms
 
 shell-integration-features = no-cursor,no-sudo,title
+
+gtk-single-instance = true
+quit-after-last-window-closed = false
