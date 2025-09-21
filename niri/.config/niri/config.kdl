@@ -34,14 +34,14 @@ environment {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
-spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
-spawn-at-startup "swaync"
+// spawn-at-startup "/usr/lib/policykit-1-pantheon/io.elementary.desktop.agent-polkit"
+// spawn-at-startup "swaync"
 spawn-at-startup "fcitx5"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "ghostty" "--initial-window=false"
-spawn-at-startup "swaybg" "-c" "1e1e2e"
-spawn-at-startup "nm-applet"
-spawn-at-startup "swayosd-server"
+// spawn-at-startup "swaybg" "-c" "1e1e2e"
+// spawn-at-startup "nm-applet"
+// spawn-at-startup "swayosd-server"
 spawn-at-startup "qs" "-c" "noctalia-shell"
 
 layout {
@@ -388,7 +388,8 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     // Mod+Shift+E { quit; }
-    Mod+M hotkey-overlay-title="Logout" { spawn "wlogout"; }
+    // Mod+M hotkey-overlay-title="Logout" { spawn "wlogout"; }
+    Mod+M hotkey-overlay-title="Logout" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerPanel" "toggle"; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
