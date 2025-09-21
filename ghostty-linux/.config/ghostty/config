@@ -25,7 +25,7 @@ freetype-load-flags = no-hinting
 
 ### Appearance
 
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 cursor-text = "#24273a"
 cursor-style = block
 
