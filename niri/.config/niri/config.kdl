@@ -42,7 +42,7 @@ spawn-at-startup "ghostty" "--initial-window=false"
 // spawn-at-startup "swaybg" "-c" "1e1e2e"
 // spawn-at-startup "nm-applet"
 // spawn-at-startup "swayosd-server"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+// spawn-at-startup "qs" "-c" "noctalia-shell"
 
 layout {
     gaps 8
@@ -389,7 +389,7 @@ binds {
     // The quit action will show a confirmation dialog to avoid accidental exits.
     // Mod+Shift+E { quit; }
     // Mod+M hotkey-overlay-title="Logout" { spawn "wlogout"; }
-    Mod+M hotkey-overlay-title="Logout" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "powerPanel" "toggle"; }
+    Mod+M hotkey-overlay-title="Logout" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
