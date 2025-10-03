@@ -23,7 +23,7 @@ input {
 
 output "eDP-1" {
     mode "2240x1400"
-    scale 1.25
+    scale 1.33
 }
 
 environment {
@@ -41,6 +41,7 @@ spawn-at-startup "fcitx5"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "ghostty" "--initial-window=false"
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+// spawn-at-startup "/usr/bin/flatpak" "run" "--branch=stable" "--arch=x86_64" "--command=\"syncthingtray --wait\"" "io.github.martchus.syncthingtray"
 // spawn-at-startup "swaybg" "-c" "1e1e2e"
 // spawn-at-startup "nm-applet"
 // spawn-at-startup "swayosd-server"
