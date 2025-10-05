@@ -41,4 +41,6 @@ mkdir -p ~/.config/systemd/user
 cd ~/dotfiles
 stow niri
 systemctl --user add-wants niri.service noctalia-shell
+systemctl --user add-wants niri.service fcitx5
+systemctl --user add-wants niri.service swayidle
 ```
