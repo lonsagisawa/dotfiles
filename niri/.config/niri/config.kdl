@@ -30,7 +30,6 @@ environment {
     QT_QPA_PLATFORM "wayland"
     QT_QPA_PLATFORMTHEME "qt6ct"
     GTK_IM_MODULE "fcitx"
-    DISPLAY ":0"
 }
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
