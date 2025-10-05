@@ -23,7 +23,7 @@ input {
 
 output "eDP-1" {
     mode "2240x1400"
-    scale 1.33
+    scale 1.25
 }
 
 environment {
@@ -137,7 +137,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "toggle"; }
 
