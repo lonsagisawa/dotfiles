@@ -118,10 +118,10 @@ window-rule {
     clip-to-geometry true
 }
 
-// noctaria-shell
+// Set the overview wallpaper on the backdrop.
 layer-rule {
-    match namespace="^quickshell-overview$"
-    place-within-backdrop true
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
 }
 
 // noctaria-shell
@@ -136,7 +136,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+space hotkey-overlay-title="Run an Application: vicinae" { spawn "vicinae" "toggle"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
 
