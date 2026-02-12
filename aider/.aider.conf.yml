@@ -1,9 +1,0 @@
-# model: gemini/gemini-2.5-pro-preview-06-05
-model: gemini/gemini-2.5-flash-preview-05-20
-editor-model: gemini/gemini-2.5-flash-preview-05-20
-architect: true
-chat-language: japanese
-auto-commits: true
-suggest-shell-commands: true
-vim: true
-analytics-disable: true
